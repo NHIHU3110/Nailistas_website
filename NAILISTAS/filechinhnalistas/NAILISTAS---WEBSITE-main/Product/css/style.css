@@ -324,3 +324,51 @@ a:hover, .learn-more:hover {
   #cart-popup{ width:calc(100% - 8px); }
 }
 
+/* === POPUP GIỎ HÀNG SCROLL FIX === */
+#cart-popup {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: var(--header-h, 70px); /* có header thì chừa ra */
+  right: 0;
+  bottom: 0;
+  width: min(680px, calc(100% - 24px));
+  background: #fff;
+  border-radius: 20px 0 0 20px;
+  border-left: 1px solid #eee;
+  box-shadow: -12px 0 30px rgba(0, 0, 0, .18);
+  z-index: 2001;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform .28s ease, opacity .28s ease;
+
+  /* ⚠️ CHÍNH CHỖ NÀY QUAN TRỌNG */
+  overflow: hidden; /* giữ layout đẹp */
+  max-height: calc(100vh - var(--header-h, 70px));
+}
+
+#cart-popup.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* PHẦN NỘI DUNG GIỎ HÀNG */
+.cart-content {
+  flex: 1;              /* chiếm toàn bộ chiều cao còn lại */
+  overflow-y: auto;     /* cho phép cuộn dọc */
+  padding: 8px 24px 12px;
+  scroll-behavior: smooth;
+}
+
+/* PHẦN FOOTER THANH TOÁN */
+.checkout-container {
+  flex-shrink: 0;       /* không bị co lại */
+  background: var(--brand, #1935E1);
+  color: #fff;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top-left-radius: 18px;
+}
