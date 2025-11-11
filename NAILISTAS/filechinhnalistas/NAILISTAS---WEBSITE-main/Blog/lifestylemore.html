@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifestyle - xem thêm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="moremain.css" />
+  <script src="../Login/auth.js" defer></script>
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay" style="display:none;">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+
+  <!-- Articles Header -->
+  <div class="articles-header">
+    <h1>LIFESTYLE & CẢM HỨNG</h1>
+  </div>
+
+  <!-- Additional Articles Section -->
+  <section class="additional-articles">
+    <div class="article-card">
+      <a href="article11.html" class="post-link">
+        <div class="article-img">
+          <img src="../images/travel.jpeg" alt="Nail & Travel">
+        </div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 15.10.2025</div>
+          <h2>Nail & Travel: Phong cách cho chuyến đi</h2>
+          <p>Mẹo phối màu nail phù hợp với trang phục và phong cách khi đi du lịch.</p>
+        </div>
+      </a>
+    </div>
+  
+    <div class="article-card">
+      <a href="article12.html" class="post-link">
+        <div class="article-img">
+          <img src="../images/work.jpeg" alt="Nail & Work">
+        </div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 15.10.2025</div>
+          <h2>Nail & Work: Giữ phong cách nơi công sở</h2>
+          <p>Chọn màu sơn và kiểu dáng phù hợp giúp bạn luôn chuyên nghiệp mà vẫn nổi bật.</p>
+        </div>
+      </a>
+    </div>
+  
+    <div class="article-card">
+      <a href="article13.html" class="post-link">
+        <div class="article-img">
+          <img src="../images/event.avif" alt="Nail & Events">
+        </div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 15.10.2025</div>
+          <h2>Nail & Events: Chuẩn bị cho buổi tiệc</h2>
+          <p>Những ý tưởng nail độc đáo giúp bạn tự tin xuất hiện tại các sự kiện quan trọng.</p>
+        </div>
+      </a>
+    </div>
+    <div class="article-card">
+        <a href="article17.html" class="post-link">
+          <div class="article-img">
+            <img src="../images/partynail.jpeg" alt="Nail & Party">
+          </div>
+          <div class="article-text">
+            <div class="article-date">Nailistas | 16.10.2025</div>
+            <h2>Nail & Party: Làm đẹp cho buổi tiệc đêm</h2>
+            <p>Chọn những mẫu nail sáng tạo và nổi bật giúp bạn thu hút mọi ánh nhìn trong các bữa tiệc đêm.</p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="article-card">
+        <a href="article18.html" class="post-link">
+          <div class="article-img">
+            <img src="../images/festival.jpeg" alt="Nail & Festival">
+          </div>
+          <div class="article-text">
+            <div class="article-date">Nailistas | 16.10.2025</div>
+            <h2>Nail & Festival: Đón xu hướng lễ hội</h2>
+            <p>Những màu sắc nail sặc sỡ và họa tiết bắt mắt sẽ giúp bạn nổi bật trong các lễ hội mùa hè.</p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="article-card">
+        <a href="article19.html" class="post-link">
+          <div class="article-img">
+            <img src="../images/wedding.jpeg" alt="Nail & Wedding">
+          </div>
+          <div class="article-text">
+            <div class="article-date">Nailistas | 16.10.2025</div>
+            <h2>Nail & Wedding: Đẹp mắt trong ngày trọng đại</h2>
+            <p>Những mẫu nail tinh tế, sang trọng giúp cô dâu thêm xinh đẹp trong ngày cưới của mình.</p>
+          </div>
+        </a>
+      </div>
+  </section>
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">Quay lại trang trước</a>
+  </section>
+
+    <!-- 🔵 Nút Facebook cố định -->
+    <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+  <script src="moremain.js"></script>
+<!-- Overlay + Cart Drawer (template chung) -->
+<div id="overlay"></div>
+
+<div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <button class="close-btn" aria-label="Đóng">×</button>
+  <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+
+  <div class="cart-content" id="cart-content" aria-live="polite"></div>
+
+  <div class="checkout-container">
+    <div class="checkout-text">
+      Tạm tính:
+      <span id="cart-total-amount">0 VND</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câu chuyện thương hiệu - Nailistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="articalmain.css" />
+  <script src="../Login/auth.js" defer></script>
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+
+  <!-- Story Content -->
+  <section class="story-container">
+    <div class="story-images">
+      <img src="../images/travel.jpeg" alt="Nail Travel">
+    </div>
+    <div class="story-text">
+      <h1>Nail Travel: Phong Cách Hoàn Hảo Cho Mọi Chuyến Đi</h1>
+      <p>
+        Du lịch không chỉ là để khám phá những địa điểm mới mà còn là cơ hội để thể hiện phong cách cá nhân. Nailistas mang đến giải pháp nail travel – những bộ móng vừa đẹp, vừa tiện lợi, giúp bạn tự tin tỏa sáng trên mọi hành trình.
+      </p>
+      <p>
+        Các thiết kế nail travel được tối ưu để bền màu, ít trầy xước và phù hợp với mọi điều kiện di chuyển. Bạn có thể lựa chọn gam màu pastel nhẹ nhàng, nude thanh lịch hoặc các màu tươi sáng, nổi bật để tạo điểm nhấn cho chuyến đi.
+      </p>
+      <p>
+        Ngoài ra, Nailistas cung cấp các kiểu dáng tiện lợi, không quá dài và dễ bảo quản, giúp bạn không phải lo lắng về móng khi đi biển, leo núi hay tham gia các hoạt động ngoài trời. Thiết kế nail travel còn kết hợp các họa tiết nhỏ như hoa, ombre hay kim tuyến tinh tế, giúp bộ móng luôn nổi bật mà vẫn gọn gàng.
+      </p>
+      <p>
+        Nailistas cam kết sử dụng các loại sơn chất lượng cao, an toàn, bền màu và phù hợp với mọi điều kiện khí hậu. Mỗi bộ móng travel không chỉ đẹp mắt mà còn là người bạn đồng hành đáng tin cậy, giúp bạn thoải mái khám phá mọi nẻo đường mà vẫn giữ phong cách thời thượng.
+      </p>
+      <p>
+        Hãy đến với Nailistas để trải nghiệm các bộ móng travel độc đáo, tiện lợi và thời trang, giúp bạn tự tin tỏa sáng trong mọi chuyến đi.
+      </p>
+      <button class="back-btn" onclick="goBack()">QUAY LẠI</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+  <!-- 🔵 Nút Facebook cố định -->
+  <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+  <script src="articalmain.js"></script>
+  <!-- Overlay + Cart Drawer (template chung) -->
+  <div id="overlay"></div>
+
+  <div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <button class="close-btn" aria-label="Đóng">×</button>
+    <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+  
+    <div class="cart-content" id="cart-content" aria-live="polite"></div>
+  
+    <div class="checkout-container">
+      <div class="checkout-text">
+        Tạm tính:
+        <span id="cart-total-amount">0 VND</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+    </div>
+  </div>
+</body>
+</html>

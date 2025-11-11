@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Màu sơn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="specialarticle.css" />
+  <script src="../Login/auth.js" defer></script>
+
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+
+  <!-- Layout 2 cột: Bài viết + Sidebar -->
+  <section class="blog-layout">
+    <!-- Cột trái: Bài viết chính -->
+    <article class="post">
+        <h1>XU HƯỚNG MÀU SƠN 2025</h1>
+
+        <p>Năm 2025 hứa hẹn là năm của những tông màu độc đáo, tinh tế và đa dạng, mang đến cơ hội cho các tín đồ nail thể hiện cá tính và phong cách riêng. Xu hướng màu sơn năm nay tập trung vào sự cân bằng giữa nhẹ nhàng và nổi bật, kết hợp hài hòa giữa các sắc pastel, màu đất, và những gam màu rực rỡ nhưng tinh tế. Dưới đây là tổng quan chi tiết giúp bạn cập nhật và lựa chọn màu sơn phù hợp nhất.</p>
+        
+        <p><strong>1) Pastel nhẹ nhàng lên ngôi:</strong> Những gam màu pastel vẫn là lựa chọn an toàn nhưng luôn thời thượng. Hồng phấn, xanh mint, lavender và be nhạt mang lại cảm giác thanh thoát, nữ tính và dễ phối hợp với nhiều phong cách trang phục. Đây là sự lựa chọn hoàn hảo cho các bạn muốn giữ vẻ tinh tế nhưng vẫn nổi bật nhẹ nhàng.</p>
+        
+        <p><strong>2) Tông màu đất và tự nhiên:</strong> Màu nâu, be ấm, cam đất hay terracotta tiếp tục là xu hướng được ưa chuộng. Những tông màu này mang lại cảm giác gần gũi, sang trọng và dễ kết hợp với trang phục, đặc biệt phù hợp với phong cách tối giản nhưng vẫn muốn có chiều sâu và cá tính.</p>
+        
+        <p><strong>3) Gam màu neon và nổi bật có chừng mực:</strong> Màu sắc rực rỡ như cam, hồng neon, xanh sáng sẽ xuất hiện nhưng được sử dụng như điểm nhấn thay vì phủ toàn bộ móng. Kết hợp cùng một vài móng màu pastel hoặc họa tiết tối giản giúp tạo hiệu ứng bắt mắt mà không quá lòe loẹt, giữ được sự tinh tế của bộ móng.</p>
+        
+        <p><strong>4) Màu kim loại và ánh nhũ nhẹ:</strong> Sơn móng ánh kim loại, bạc, vàng hồng hay ánh nhũ nhẹ sẽ là lựa chọn sang trọng cho các dịp đặc biệt. Năm 2025, các lớp ánh nhũ mỏng, bóng tự nhiên được ưu tiên hơn là lớp dày lấp lánh, giúp bộ móng vẫn giữ được sự thanh lịch mà vẫn hiện đại.</p>
+        
+        <p><strong>5) Sắc thái màu pha trộn (Gradient & Ombre):</strong> Kỹ thuật pha trộn màu sẽ trở nên phổ biến, từ ombre nhẹ nhàng pastel đến gradient sắc màu đất – nude. Những chuyển màu tinh tế này không chỉ tạo hiệu ứng bắt mắt mà còn thể hiện sự sáng tạo, giúp đôi tay trở nên nổi bật theo cách riêng của mỗi người.</p>
+        
+        <p><strong>6) Kết hợp họa tiết đơn giản:</strong> Xu hướng màu sơn năm nay kết hợp hoàn hảo với các họa tiết minimal, kẻ mảnh, chấm bi, hay geometric nhỏ. Những chi tiết này giúp bộ móng trở nên hiện đại và thời thượng mà vẫn giữ được vẻ tinh tế, dễ phối hợp với các màu chủ đạo.</p>
+        
+        <p><strong>7) Sơn dưỡng màu bền lâu:</strong> Song song với màu sắc mới, chất lượng sơn và độ bền cũng được chú trọng. Lớp base coat và top coat chất lượng giúp màu sơn giữ lâu, bề mặt bóng mịn, hạn chế bong tróc và đảm bảo đôi tay luôn nổi bật suốt cả tuần.</p>
+        
+        <p>Xu hướng màu sơn 2025 mang đến sự đa dạng, tinh tế và cá tính, cho phép bạn thoải mái thể hiện phong cách riêng. Lựa chọn tông màu phù hợp, kết hợp họa tiết tối giản và chăm sóc móng đúng cách sẽ giúp bộ móng của bạn vừa thời thượng, vừa thanh lịch, phù hợp mọi hoàn cảnh.</p>
+
+  <button class="back-btn" onclick="goBack()">QUAY LẠI</button>
+</article>
+
+
+    <!-- Cột phải: Sidebar bài viết nổi bật -->
+    <aside class="sidebar">
+      <h3>Bài viết nổi bật</h3>
+
+      <a class="post-card" href="takecarenail_blog.html">
+        <div class="post-box">
+          <img src="../images/chammong.webp" alt="Cách chăm sóc sau khi làm móng">
+          <div>
+            <div class="title">Cách chăm sóc sau khi làm móng</div>
+            <div class="meta">3 phút đọc • Hướng dẫn</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="post-card" href="simple.html">
+        <div class="post-box">
+          <img src="../images/toigian.jpeg" alt="Xu hướng móng tối giản">
+          <div>
+            <div class="title">Xu hướng móng tối giản</div>
+            <div class="meta">3 phút đọc • Xu hướng</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="post-card" href="gelordip.html">
+        <div class="post-box">
+          <img src="../images/diporgel.jpeg" alt="So sánh Gel và Dip">
+          <div>
+            <div class="title">Gel hay Dip: Chọn gì?</div>
+            <div class="meta">4 phút đọc • So sánh</div>
+          </div>
+        </div>
+      </a>
+
+      <a class="post-card" href="nailclean.html">
+        <div class="post-box">
+          <img src="../images/nailtow.jpeg" alt="Chuẩn vệ sinh tại Nailistas">
+          <div>
+            <div class="title">Chuẩn vệ sinh tại Nailistas</div>
+            <div class="meta">2 phút đọc • Hậu trường</div>
+          </div>
+        </div>
+      </a>
+    </aside>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+    <!-- 🔵 Nút Facebook cố định -->
+    <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+  <script src="specialarticle.js"></script>
+<!-- Overlay + Cart Drawer (template chung) -->
+<div id="overlay"></div>
+
+<div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <button class="close-btn" aria-label="Đóng">×</button>
+  <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+
+  <div class="cart-content" id="cart-content" aria-live="polite"></div>
+
+  <div class="checkout-container">
+    <div class="checkout-text">
+      Tạm tính:
+      <span id="cart-total-amount">0 VND</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+</body>
+</html>

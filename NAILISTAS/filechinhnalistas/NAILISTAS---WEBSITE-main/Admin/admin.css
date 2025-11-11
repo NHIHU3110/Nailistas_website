@@ -1,0 +1,208 @@
+:root{
+    /* 1. NỀN */
+    --bg-body:#feffef;
+    --bg-section:#fff8f0; /* light cream */
+    --bg-card:#ffffff; /* carousel/collection cards */
+    /* 2. CHỮ */
+    --tx-main:#333333;
+    --tx-small:#1a1a1a;
+    --tx-muted:#444444;
+    --tx-info:#540D3E;
+    --tx-accent:#1935E1; /* tiêu đề lớn, link hover, CTA bg, header bg */
+    --tx-infobox:#9F4E6E;
+    --tx-softpink:#ffb6c1; /* h3 footer, marquee highlight */
+    /* 3. KHUNG/BG đặc biệt */
+    --bg-infobox:#ffd0da;
+    --bd-infoblock:#f5f5dc;
+    --bg-h4:rgba(255,255,255,0.8);
+    --sh-infobox:rgba(0,0,0,0.15);
+    --sh-infoblock:rgba(0,0,0,0.05);
+    --sh-navbtn:rgba(0,0,0,0.2);
+    --bg-navbtn:rgba(255,182,193,0.8);
+    /* 4. HOVER/EFFECT */
+    --cta-hover:#9F4E6E;
+    --learn-hover:#1d1d1d;
+    --drop-1:#ffc0cb;
+    --drop-2:#ff80b5;
+    /* Brand pinks */
+    --pink-500:#ff5aa7;
+    --pink-600:#e94f98;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+    color:var(--tx-main); background:var(--bg-body);
+    display:grid; grid-template-columns:260px 1fr; grid-template-rows:64px 1fr; grid-template-areas:"aside header" "aside main";
+  }
+
+  /* Header */
+  header{
+    grid-area:header; display:flex; align-items:center; justify-content:space-between;
+    padding:0 16px; background:var(--tx-accent); color:#fff; position:sticky; top:0; z-index:5;
+    box-shadow:0 2px 8px var(--sh-infobox);
+  }
+  .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.5px}
+  .brand-badge{width:36px;height:36px;border-radius:10px; background:linear-gradient(135deg,var(--pink-500),var(--pink-600)); display:grid; place-items:center; box-shadow:0 6px 16px rgba(255,90,167,.35)}
+  .brand-badge span{color:#fff; font-weight:900}
+  .header-actions{display:flex; align-items:center; gap:8px}
+  .search{position:relative}
+  .search input{height:36px; border-radius:10px; border:1px solid #e7e7ef; padding:0 12px; outline:none; width:220px}
+  .user-chip{display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.12); padding:6px 10px; border-radius:999px}
+
+  /* Aside */
+  aside{
+    grid-area:aside; background:var(--bg-section); border-right:1px solid var(--bd-infoblock);
+    padding:16px; overflow:auto; position:sticky; top:0; height:100vh;
+  }
+  .nav-section h4{margin:16px 10px 6px; color:var(--tx-muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.08em}
+  .nav{display:grid; gap:6px}
+  .nav a{display:flex; align-items:center; gap:10px; padding:10px 12px; text-decoration:none; color:var(--tx-main); border-radius:10px}
+  .nav a:hover,.nav a.active{background:#fff; box-shadow:0 4px 10px var(--sh-infoblock)}
+  .nav .dot{width:8px; height:8px; border-radius:50%; background:var(--pink-500); box-shadow:0 0 0 3px rgba(255,90,167,.15)}
+
+  /* Main */
+  main{grid-area:main; padding:20px 20px 80px; overflow:auto}
+
+  .grid{display:grid; gap:16px}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{
+    background:var(--bg-card); border:1px solid var(--bd-infoblock); border-radius:16px; padding:16px; box-shadow:0 8px 16px var(--sh-infoblock);
+  }
+  .kpi{display:flex; align-items:center; justify-content:space-between}
+  .kpi .value{font-size:28px; font-weight:800}
+  .kpi .label{color:var(--tx-muted); font-size:12px}
+  .kpi .trend.up{color:#1f9d55}
+  .kpi .trend.down{color:#b91c1c}
+
+  .toolbar{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+  .btn{border:1px solid var(--bd-infoblock); background:#fff; border-radius:10px; padding:8px 12px; cursor:pointer}
+  .btn.primary{background:var(--tx-accent); color:#fff; border-color:transparent}
+  .btn.primary:hover{background:var(--cta-hover)}
+  .btn.ghost{background:transparent}
+
+  table{width:100%; border-collapse:separate; border-spacing:0 10px}
+  th{font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--tx-muted); text-align:left}
+  tbody tr{background:#fff}
+  tbody tr td{padding:12px; border-top:1px solid var(--bd-infoblock); border-bottom:1px solid var(--bd-infoblock)}
+  tbody tr td:first-child{border-left:1px solid var(--bd-infoblock); border-top-left-radius:10px; border-bottom-left-radius:10px}
+  tbody tr td:last-child{border-right:1px solid var(--bd-infoblock); border-top-right-radius:10px; border-bottom-right-radius:10px}
+  .status{padding:4px 8px; border-radius:999px; font-size:12px}
+  .status.booked{background:#e6f0ff; color:var(--tx-accent)}
+  .status.done{background:#e6ffef; color:#1f9d55}
+  .status.cancel{background:#fff1f2; color:#b91c1c}
+
+  .infobox{background:var(--bg-infobox); border:1px solid var(--bd-infoblock); border-radius:16px; padding:14px 16px; box-shadow:0 8px 24px var(--sh-infobox)}
+  .infobox h3{margin:0 0 6px; color:var(--tx-infobox)}
+  .infobox p{margin:0; color:var(--tx-info)}
+
+  .pill{display:inline-flex; align-items:center; gap:8px; padding:4px 10px; border-radius:999px; background:#fff}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--pink-500)}
+
+  /* Footer */
+  footer{margin-top:24px; color:var(--tx-muted)}
+  footer h3{color:var(--tx-softpink)}
+
+  /* Modal */
+  .modal{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.25)}
+  .modal.open{display:grid}
+  .modal .sheet{background:#fff; width:clamp(320px, 92vw, 680px); border-radius:16px; padding:16px; box-shadow:0 16px 60px rgba(0,0,0,.2)}
+  .sheet h3{margin:0 0 8px}
+  .form{display:grid; gap:10px}
+  .form label{font-size:12px; color:var(--tx-muted)}
+  .form input,.form select,.form textarea{width:100%; padding:10px 12px; border:1px solid var(--bd-infoblock); border-radius:10px; background:#fff}
+
+  /* Responsive */
+  @media (max-width: 980px){
+    body{grid-template-columns:1fr; grid-template-rows:64px auto 1fr; grid-template-areas:"header" "aside" "main"}
+    aside{position:static; height:auto}
+    .search input{width:160px}
+  }
+  /* Thêm thuộc tính hidden cho các section khi không được chọn */
+  .view[hidden] {
+    display: none;
+  }
+
+  .user-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .btn.logout {
+    background: #f85a5a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.25s;
+    font-size: 13px;
+  }
+  
+  .btn.logout:hover {
+    background: #e14a4a;
+  }
+  /* Overlay nền mờ */
+#logoutConfirm {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  
+  /* Hộp xác nhận */
+  .confirm-box {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: popupFade 0.3s ease;
+  }
+  
+  .confirm-box h3 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .confirm-buttons .btn {
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  
+  .btn.yes {
+    background: #f85a5a;
+    color: #fff;
+  }
+  
+  .btn.yes:hover {
+    background: #e14a4a;
+  }
+  
+  .btn.no {
+    background: #ccc;
+  }
+  
+  .btn.no:hover {
+    background: #b5b5b5;
+  }
+  
+  @keyframes popupFade {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  

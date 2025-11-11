@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Làm đẹp - xem thêm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="moremain.css" />
+  <script src="../Login/auth.js" defer></script>
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay" style="display:none;">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+
+  <!-- Articles Header -->
+  <div class="articles-header">
+    <h1>LÀM ĐẸP</h1>
+  </div>
+
+  <!-- Additional Articles Section -->
+  <section class="additional-articles">
+    <div class="article-card">
+      <a href="article8.html" class="post-link">
+        <div class="article-img"><img src="../images/gradient-nails.png" alt="Tiêu đề bài 8"></div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 10.10.2025</div>
+          <h2>Gradient & Ombre ấn tượng</h2>
+          <p>Kỹ thuật pha màu tạo hiệu ứng bắt mắt, thể hiện sự sáng tạo cho đôi tay.</p>
+        </div>
+      </a>
+    </div>
+    <div class="article-card">
+      <a href="article9.html" class="post-link">
+        <div class="article-img"><img src="../images/busy.jpeg" alt="Tiêu đề bài 9"></div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 10.10.2025</div>
+          <h2>Chăm sóc móng cho người bận rộn</h2>
+          <p>Mẹo giúp giữ móng đẹp, chắc khỏe dù bạn không có nhiều thời gian chăm sóc.</p>
+        </div>
+      </a>
+    </div>
+    <div class="article-card">
+      <a href="article10.html" class="post-link">
+        <div class="article-img"><img src="../images/summer-nails.avif" alt="Tiêu đề bài 10"></div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 10.10.2025</div>
+          <h2>Top màu sơn nổi bật mùa hè</h2>
+          <p>Những gam màu rực rỡ nhưng tinh tế giúp đôi tay thêm nổi bật trong mùa hè.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="article-card">
+        <a href="article14.html" class="post-link">
+          <div class="article-img"><img src="../images/nailsangtao.jpeg" alt="Nail Art Creative"></div>
+          <div class="article-text">
+            <div class="article-date">Nailistas | 12.10.2025</div>
+            <h2>Nghệ thuật nail sáng tạo</h2>
+            <p>Những mẫu nail độc đáo giúp đôi tay bạn trở nên nổi bật và cá tính.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="article-card">
+        <a href="article15.html" class="post-link">
+          <div class="article-img"><img src="../images/mongkhoe.jpeg" alt="Healthy Nails"></div>
+          <div class="article-text">
+            <div class="article-date">Nailistas | 12.10.2025</div>
+            <h2>Móng khỏe đẹp từ bên trong</h2>
+            <p>Cách chăm sóc móng, bổ sung dưỡng chất để móng luôn chắc khỏe và bóng mượt.</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="article-card">
+        <a href="article16.html" class="post-link">
+          <div class="article-img"><img src="../images/theomua.png" alt="Seasonal Nail Trends"></div>
+          <div class="article-text">
+            <div class="article-date">Nailistas | 12.10.2025</div>
+            <h2>Mẫu nail hợp xu hướng theo mùa</h2>
+            <p>Những gam màu và họa tiết hot trend mỗi mùa giúp bạn luôn bắt kịp phong cách.</p>
+          </div>
+        </a>
+      </div>
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">Quay lại trang trước</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+    <!-- 🔵 Nút Facebook cố định -->
+    <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+  <script src="moremain.js"></script>
+<!-- Overlay + Cart Drawer (template chung) -->
+<div id="overlay"></div>
+
+<div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <button class="close-btn" aria-label="Đóng">×</button>
+  <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+
+  <div class="cart-content" id="cart-content" aria-live="polite"></div>
+
+  <div class="checkout-container">
+    <div class="checkout-text">
+      Tạm tính:
+      <span id="cart-total-amount">0 VND</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+</body>
+</html>

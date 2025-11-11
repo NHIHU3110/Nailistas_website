@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Admin Nailistas",
+    "email": "admin@gmail.com",
+    "pw": "Admin@123",
+    "role": "admin",
+    "createdAt": 1710000000000
+  },
+  {
+    "name": "Người dùng mẫu",
+    "email": "Nailistas@gmail.com",
+    "pw": "123456789",
+    "role": "user",
+    "createdAt": 1710000000000
+  }
+]

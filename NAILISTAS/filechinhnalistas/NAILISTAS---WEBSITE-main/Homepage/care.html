@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bộ sưu tập nước sơn - Nailistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="homemoremain.css" />
+  <script src="../Login/auth.js" defer></script>
+
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+  <!-- Story Content -->
+  <!-- Story Content -->
+<section class="story-container">
+  <div class="story-images">
+    <video width="100%" controls autoplay muted loop>
+      <source src="../video/nailcare.mp4" type="video/mp4" alt="Trình duyệt của bạn không hỗ trợ video">
+    </video>
+  </div>
+    <div class="story-text">
+      <h1>Quy trình làm móng an toàn tại Nailistas</h1>
+      <p>
+        Tại Nailistas, sự an toàn và sức khỏe của khách hàng luôn được đặt lên hàng đầu. 
+        Mỗi bước trong quy trình làm móng đều được thực hiện tỉ mỉ và đảm bảo vệ sinh tuyệt đối.
+      </p>
+      <p>
+        Trước khi bắt đầu, tất cả dụng cụ đều được "tiệt trùng kỹ lưỡng", đảm bảo loại bỏ mọi vi khuẩn và nguy cơ lây nhiễm. 
+        Khách hàng được rửa tay và sát khuẩn, tạo môi trường an toàn và sạch sẽ.
+      </p>
+      <p>
+        Khi thực hiện, các kỹ thuật viên của Nailistas luôn sử dụng sản phẩm chất lượng cao, không chứa hóa chất độc hại**, 
+        đồng thời áp dụng kỹ thuật đúng chuẩn để bảo vệ móng tự nhiên và da xung quanh.
+      </p>
+      <p>
+        Sau khi hoàn tất, khách hàng được hướng dẫn chăm sóc móng tại nhà, duy trì màu sắc bền đẹp và tránh các tổn thương. 
+        Với quy trình này, Nailistas cam kết mang đến trải nghiệm làm đẹp vừa "an toàn", vừa thư giãn và thú vị.
+      </p>
+      <button class="back-btn" onclick="goBack()">QUAY LẠI</button>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+  <!-- 🔵 Nút Facebook cố định -->
+  <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+  <script src="homemoremain.js"></script>
+
+
+</div>
+<!-- Overlay + Cart Drawer (template chung) -->
+<div id="overlay"></div>
+
+<div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <button class="close-btn" aria-label="Đóng">×</button>
+  <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+
+  <div class="cart-content" id="cart-content" aria-live="polite"></div>
+
+  <div class="checkout-container">
+    <div class="checkout-text">
+      Tạm tính:
+      <span id="cart-total-amount">0 VND</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+</body>
+
+
+
+</html>

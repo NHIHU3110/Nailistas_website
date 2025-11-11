@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Nailistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="blog.css" />
+  <script src="../Login/auth.js" defer></script>
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay" style="display:none;">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+
+  <!-- Story Section -->
+  <section class="story-container">
+    <div class="story-text">
+      <h1>BÀI VIẾT NỔI BẬT</h1>
+      <h2>CÁCH CHĂM SÓC MÓNG SAU KHI LÀM</h2>
+      <p class="story-desc">
+        Chăm sóc móng sau khi làm giúp giữ móng khỏe mạnh và đẹp lâu dài. 
+        Để đảm bảo kết quả tốt, bạn cần giữ móng khô, dưỡng móng với dầu dưỡng, tránh va chạm mạnh, bảo vệ móng khỏi hóa chất, và tránh tự tẩy sơn quá sớm. 
+        Thực hiện đúng cách để có bộ móng bền đẹp và khỏe mạnh.
+      </p>
+      <button class="read-more-btn" data-link="takecarenail_blog.html">ĐỌC BÀI VIẾT</button>
+    </div>
+    <div class="story-images">
+      <div class="image-hills">
+        <img src="../images/nailtow.jpeg" alt="Cocoon tại Nhật Bản" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Header -->
+  <div class="articles-header">
+    <h1>LÀM ĐẸP</h1>
+    <a href="../Blog/lamdepmore.html" class="see-more-btn">Xem thêm</a>
+  </div>
+
+  <!-- Additional Articles Section -->
+  <section class="additional-articles">
+    <div class="article-card">
+      <a href="article8.html" class="post-link">
+        <div class="article-img"><img src="../images/gradient-nails.png" alt="Tiêu đề bài 8"></div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 10.10.2025</div>
+          <h2>Gradient & Ombre ấn tượng</h2>
+          <p>Kỹ thuật pha màu tạo hiệu ứng bắt mắt, thể hiện sự sáng tạo cho đôi tay.</p>
+        </div>
+      </a>
+    </div>
+    <div class="article-card">
+      <a href="article9.html" class="post-link">
+        <div class="article-img"><img src="../images/busy.jpeg" alt="Tiêu đề bài 9"></div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 10.10.2025</div>
+          <h2>Chăm sóc móng cho người bận rộn</h2>
+          <p>Mẹo giúp giữ móng đẹp, chắc khỏe dù bạn không có nhiều thời gian chăm sóc.</p>
+        </div>
+      </a>
+    </div>
+    <div class="article-card">
+      <a href="article10.html" class="post-link">
+        <div class="article-img"><img src="../images/summer-nails.avif" alt="Tiêu đề bài 10"></div>
+        <div class="article-text">
+          <div class="article-date">Nailistas | 10.10.2025</div>
+          <h2>Top màu sơn nổi bật mùa hè</h2>
+          <p>Những gam màu rực rỡ nhưng tinh tế giúp đôi tay thêm nổi bật trong mùa hè.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Articles Header: Lifestyle -->
+<div class="articles-header">
+  <h1>LIFESTYLE & CẢM HỨNG</h1>
+  <a href="../Blog/lifestylemore.html" class="see-more-btn">Xem thêm</a>
+</div>
+
+<!-- Additional Articles Section: Lifestyle -->
+<section class="additional-articles">
+  <div class="article-card">
+    <a href="article11.html" class="post-link">
+      <div class="article-img">
+        <img src="../images/travel.jpeg" alt="Nail & Travel">
+      </div>
+      <div class="article-text">
+        <div class="article-date">Nailistas | 15.10.2025</div>
+        <h2>Nail & Travel: Phong cách cho chuyến đi</h2>
+        <p>Mẹo phối màu nail phù hợp với trang phục và phong cách khi đi du lịch.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="article-card">
+    <a href="article12.html" class="post-link">
+      <div class="article-img">
+        <img src="../images/work.jpeg" alt="Nail & Work">
+      </div>
+      <div class="article-text">
+        <div class="article-date">Nailistas | 15.10.2025</div>
+        <h2>Nail & Work: Giữ phong cách nơi công sở</h2>
+        <p>Chọn màu sơn và kiểu dáng phù hợp giúp bạn luôn chuyên nghiệp mà vẫn nổi bật.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="article-card">
+    <a href="article13.html" class="post-link">
+      <div class="article-img">
+        <img src="../images/event.avif" alt="Nail & Events">
+      </div>
+      <div class="article-text">
+        <div class="article-date">Nailistas | 15.10.2025</div>
+        <h2>Nail & Events: Chuẩn bị cho buổi tiệc</h2>
+        <p>Những ý tưởng nail độc đáo giúp bạn tự tin xuất hiện tại các sự kiện quan trọng.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+<div id="tarotContainer">
+  <h1 id="tarotTitle">Trải Bài </h1>
+  <div class="cards-wrapper">    
+    <div class="cards-wrapper">
+
+      <div class="card-slot">
+        <div class="card-inner" data-message="Vẻ đẹp thật sự bắt đầu khi bạn yêu đôi tay của chính mình.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Vẻ đẹp thật sự bắt đầu khi bạn yêu đôi tay của chính mình.<br>
+            Chọn tông nude hoặc hồng sữa – tự nhiên chính là phép màu của bạn.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Khi bạn dám đổi màu, cuộc sống cũng thay sắc.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Khi bạn dám đổi màu, cuộc sống cũng thay sắc.<br>
+            Thử gam pastel hoặc ánh chrome để đón năng lượng mới.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Ánh sáng bạn tìm kiếm đang ở ngay đầu ngón tay.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Ánh sáng bạn tìm kiếm đang ở ngay đầu ngón tay.<br>
+            Chút nhũ sáng nơi đầu ngón – như phép màu nhỏ nhắn từ vũ trụ gửi đến bạn
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Hãy để móng tay kể lại tâm trạng hôm nay.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Hãy để móng tay kể lại tâm trạng hôm nay.<br>
+            Đỏ khi đam mê, tím khi mộng mơ — trái tim bạn biết điều gì hợp nhất.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Dừng lại và để đôi tay bạn được yêu chiều.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Dừng lại và để đôi tay bạn được yêu chiều.<br>
+            Một buổi chăm sóc nhẹ tại Nailistas – xứng đáng cho chính bạn - Nhập mã GIAM10 khi thanh toán nhé
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Không có vết lem nào là sai – chỉ là nghệ thuật chưa hoàn tất.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Không có vết lem nào là sai – chỉ là nghệ thuật chưa hoàn tất.<br>
+            Hãy yêu từng nét vẽ, vì đó là dấu ấn riêng của bạn.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Bạn không cần lý do để làm đẹp – chỉ cần muốn thế.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Bạn không cần lý do để làm đẹp – chỉ cần muốn thế.<br>
+            Một lớp sơn mịn hay hiệu ứng sữa sẽ khiến bạn mỉm cười.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Tự tin khoe đôi tay – bạn đang cầm giữ cả bầu trời nhỏ.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Tự tin khoe đôi tay – bạn đang cầm giữ cả bầu trời nhỏ.<br>
+            Chúc mừng bạn là khách hàng may mắn nhận đuợc deal hời - nhập FREE khi thanh toán nhé
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Đôi tay biết chăm sóc cũng là trái tim biết yêu thương.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Đôi tay biết chăm sóc cũng là trái tim biết yêu thương.<br>
+            Đôi tay được dưỡng mỗi tối – là lời nhắc rằng bạn xứng đáng được yêu thương mỗi ngày.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Sự tinh tế không nằm ở màu sắc, mà ở cách bạn mang nó.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Sự tinh tế không nằm ở màu sắc, mà ở cách bạn mang nó.<br>
+            Một bộ French trong suốt đủ khiến mọi ánh nhìn dừng lại.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Hãy để mỗi ngón tay kể một câu chuyện nhỏ.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Hãy để mỗi ngón tay kể một câu chuyện nhỏ.<br>
+            Kết hợp tone pastel hoặc hoa văn nhẹ – tinh tế và rất “bạn”.
+          </div>
+        </div>
+      </div>
+    
+      <div class="card-slot">
+        <div class="card-inner" data-message="Bạn không cần hoàn hảo – chỉ cần thật và lấp lánh.">
+          <div class="card-front"></div>
+          <div class="card-back">
+            Bạn không cần hoàn hảo – chỉ cần thật và lấp lánh.<br>
+            Hãy thử một họa tiết vẽ tay – nét duyên riêng của bạn hôm nay - Hãy nhập mã GIAM50K khi thanh toán nhé
+          </div>
+        </div>
+      </div>
+      
+    
+    </div>
+    
+
+
+  </div>
+
+  <div class="shuffle-container">
+    <button id="shuffleBtn">Xáo bài</button>
+  </div>
+
+  <div id="cardMessageContainer">
+    <div class="message-display" id="cardMessageDisplay">Ấn vào lá bài để xem thông điệp</div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+    <!-- 🔵 Nút Facebook cố định -->
+    <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+    <script src="blog.js"></script>
+  <!-- Overlay + Cart Drawer (template chung) -->
+<div id="overlay"></div>
+
+<div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <button class="close-btn" aria-label="Đóng">×</button>
+  <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+
+  <div class="cart-content" id="cart-content" aria-live="polite"></div>
+
+  <div class="checkout-container">
+    <div class="checkout-text">
+      Tạm tính:
+      <span id="cart-total-amount">0 VND</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+</body>
+</html>

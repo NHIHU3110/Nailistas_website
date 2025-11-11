@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký — Nailistas Việt Nam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Login/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+  
+
+  </style>
+  
+
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;" onclick="logout(); return false;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+  </header>
+  <!-- Transition overlay -->
+  <div id="transition-overlay"><img src="../images/nail logo-01.png" alt="Logo chuyển trang"></div>
+  <main>
+  <div class="login-container">
+    <!-- Cột trái: brand/giới thiệu -->
+    <div class="login-image">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas">
+      <h1>Tham gia cùng Nailistas</h1>
+      <p>Tạo tài khoản để trải nghiệm dịch vụ làm đẹp chuyên nghiệp và nhận ưu đãi độc quyền.</p>
+      <ul style="margin-top:14px; text-align:left; max-width:420px; margin-inline:auto; line-height:1.6; opacity:.95">
+        <li>Giảm 15% cho lần đặt hàng đầu tiên</li>
+        <li>Tích điểm thưởng mỗi lần mua sắm</li>
+        <li>Ưu tiên đặt lịch hẹn dịch vụ</li>
+        <li>Nhận thông báo sản phẩm &amp; xu hướng mới</li>
+      </ul>
+    </div>
+
+    <!-- Cột phải: form -->
+    <div class="login-form">
+      <h2>Tạo tài khoản mới</h2>
+      <p class="hint">Chỉ mất vài phút để bắt đầu</p>
+
+      <form id="form-signup" novalidate>
+        <div class="row">
+          <label>
+            Họ và tên
+            <input type="text" id="su-name" placeholder="VD: Nguyễn Thị Lan" autocomplete="name" required>
+            <div class="error" id="su-name-err"></div>
+          </label>
+          <label>
+            Email
+            <input type="email" id="su-email" placeholder="you@example.com" autocomplete="email" required>
+            <div class="error" id="su-email-err"></div>
+          </label>
+        </div>
+
+        <label class="field-suffix">
+          Mật khẩu
+          <input type="password" id="su-password" placeholder="Tối thiểu 8 ký tự" autocomplete="new-password" required>
+          <button class="toggle-eye" type="button" data-for="su-password" aria-label="Hiện/ẩn mật khẩu"></button>
+          <div class="error" id="su-password-err"></div>
+        </label>
+
+        <label class="field-suffix">
+          Xác nhận mật khẩu
+          <input type="password" id="su-confirm" placeholder="Nhập lại mật khẩu" autocomplete="new-password" required>
+          <button class="toggle-eye" type="button" data-for="su-confirm" aria-label="Hiện/ẩn mật khẩu"></button>
+          <div class="error" id="su-confirm-err"></div>
+        </label>
+
+        <div class="actions" style="margin-top:4px">
+          <button class="btn" type="submit" style="flex:1">Tạo tài khoản</button>
+          <button class="btn secondary" type="button" id="to-login">Đã có tài khoản</button>
+        </div>
+
+        <div class="error" id="signup-general"></div>
+        <div class="ok" id="signup-ok" style="display:none"></div>
+
+        <p class="footer-form" style="margin-top:10px">
+          Bằng việc đăng ký, bạn đồng ý với
+          <a href="#" id="open-terms">Điều khoản dịch vụ</a> và
+          <a href="#" id="open-privacy">Chính sách bảo mật</a>.
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- Giữ nguyên 2 dialog: Điều khoản & Bảo mật (đặt sau </main>) -->
+
+        <!-- 📄 Điều khoản dịch vụ -->
+<dialog id="dlg-terms" class="modal" aria-labelledby="terms-title">
+  <form method="dialog" class="modal-card">
+    <header class="modal-header">
+      <h3 id="terms-title">Điều khoản dịch vụ</h3>
+      <button type="button" class="modal-close" aria-label="Đóng">&times;</button>
+    </header>
+
+    <section class="modal-body">
+      <div class="terms-section">
+        <h4>1. Chấp nhận điều khoản</h4>
+        <p>Bằng việc tạo tài khoản hoặc sử dụng dịch vụ Nailistas, bạn đồng ý tuân thủ các điều khoản này và mọi chính sách kèm theo.</p>
+
+        <h4>2. Tài khoản & Bảo mật</h4>
+        <p>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập và mọi hoạt động diễn ra dưới tài khoản của mình. Mọi thông tin cung cấp phải chính xác, đầy đủ và cập nhật.</p>
+
+        <h4>3. Đặt lịch & Thanh toán</h4>
+        <p>Đặt lịch hợp lệ khi bạn nhận được xác nhận. Thanh toán có thể yêu cầu thanh toán trước hoặc khi sử dụng dịch vụ; mọi giao dịch tuân theo phương thức hiển thị tại thời điểm đặt.</p>
+
+        <h4>4. Hủy/Đổi lịch</h4>
+        <p>Quy định hủy/đổi lịch và phí (nếu có) được áp dụng theo chính sách từng dịch vụ. Vui lòng kiểm tra điều kiện hủy khi đặt lịch.</p>
+
+        <h4>5. Giá & Khuyến mãi</h4>
+        <p>Giá dịch vụ và chương trình khuyến mãi có thể thay đổi. Mã khuyến mãi áp dụng theo điều kiện cụ thể và không được chuyển nhượng.</p>
+
+        <h4>6. Quyền sở hữu trí tuệ</h4>
+        <p>Tất cả nội dung trên nền tảng (thương hiệu, hình ảnh, mô tả, giao diện) thuộc quyền sở hữu của Nailistas hoặc đối tác cấp phép và không được sao chép trái phép.</p>
+
+        <h4>7. Trách nhiệm & Giới hạn</h4>
+        <p>Nailistas nỗ lực cung cấp dịch vụ an toàn và đúng mô tả. Tuy nhiên, chúng tôi không chịu trách nhiệm cho tổn thất gián tiếp hoặc hậu quả vượt ngoài phạm vi pháp luật cho phép.</p>
+
+        <h4>8. Bảo mật & Dữ liệu</h4>
+        <p>Chúng tôi thu thập và xử lý dữ liệu cá nhân theo Chính sách Bảo mật. Thông tin chỉ được sử dụng để cung cấp dịch vụ và liên lạc liên quan đến tài khoản của bạn.</p>
+
+        <h4>9. Thay đổi điều khoản</h4>
+        <p>Chúng tôi có quyền cập nhật điều khoản; các thay đổi có hiệu lực khi được đăng tải. Việc bạn tiếp tục sử dụng dịch vụ sau khi cập nhật đồng nghĩa với việc chấp nhận điều khoản mới.</p>
+
+        <h4>10. Liên hệ</h4>
+        <p>Nếu có câu hỏi hoặc khiếu nại, vui lòng liên hệ qua email: <a href="mailto:support@nailistas.vn">support@nailistas.vn</a>.</p>
+      </div>
+    </section>
+
+    <footer class="modal-footer">
+    </footer>
+  </form>
+</dialog>
+
+<!-- 🔒 Chính sách bảo mật -->
+<dialog id="dlg-privacy" class="modal" aria-labelledby="privacy-title">
+  <form method="dialog" class="modal-card">
+    <header class="modal-header">
+      <h3 id="privacy-title">Chính sách bảo mật</h3>
+      <button type="button" class="modal-close" aria-label="Đóng">&times;</button>
+    </header>
+
+    <section class="modal-body">
+      <div class="privacy-section">
+        <h4>1. Thông tin chúng tôi thu thập</h4>
+        <ul>
+          <li>Thông tin cá nhân: họ tên, email, số điện thoại.</li>
+          <li>Thông tin đặt lịch: lịch sử hẹn, dịch vụ đã sử dụng.</li>
+          <li>Thông tin mua sắm: đơn hàng, sản phẩm yêu thích.</li>
+          <li>Tùy chọn của bạn về thông báo và ưu đãi.</li>
+        </ul>
+
+        <h4>2. Mục đích sử dụng thông tin</h4>
+        <ul>
+          <li>Cung cấp và cải thiện dịch vụ làm đẹp chuyên nghiệp.</li>
+          <li>Gửi thông báo về lịch hẹn và trạng thái đơn hàng.</li>
+          <li>Cập nhật ưu đãi, khuyến mãi và sự kiện phù hợp.</li>
+          <li>Phân tích hành vi để nâng cao trải nghiệm người dùng.</li>
+        </ul>
+
+        <h4>3. Bảo vệ thông tin của bạn</h4>
+        <ul>
+          <li>Dữ liệu được mã hóa và lưu trữ an toàn theo tiêu chuẩn bảo mật.</li>
+          <li>Không chia sẻ thông tin với bên thứ ba khi chưa có sự đồng ý.</li>
+          <li>Chỉ sử dụng dữ liệu trong phạm vi phục vụ dịch vụ Nailistas.</li>
+          <li>Tuân thủ nghiêm ngặt các quy định về bảo vệ dữ liệu cá nhân.</li>
+        </ul>
+
+        <h4>4. Quyền của bạn</h4>
+        <ul>
+          <li>Yêu cầu truy cập và xem thông tin cá nhân.</li>
+          <li>Chỉnh sửa hoặc cập nhật thông tin không chính xác.</li>
+          <li>Yêu cầu xóa dữ liệu khi không còn sử dụng dịch vụ.</li>
+          <li>Tùy chỉnh việc nhận thông báo tiếp thị từ Nailistas.</li>
+        </ul>
+
+        <h4>5. Liên hệ</h4>
+        <p>Mọi thắc mắc liên quan đến bảo mật, vui lòng liên hệ: <a href="mailto:support@nailistas.vn">support@nailistas.vn</a>.</p>
+      </div>
+    </section>
+
+    
+  </form>
+</dialog>
+
+    </form>
+</section>
+<footer>
+    <div class="footer-container">
+      <div class="footer-section"><h3>Hệ thống chi nhánh</h3><p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p><p>📍 25 Lý Thương Kiệt, Hà Nội</p><p>📍 08 Bạch Đằng, Đà Nẵng</p></div>
+      <div class="footer-section"><h3>Liên hệ</h3><p>📞 Hotline: <strong>0909 888 777</strong></p><p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p></div>
+      <div class="footer-section"><h3>Chính sách</h3><p><a href="#">Chính sách bảo mật</a></p><p><a href="#">Điều khoản dịch vụ</a></p></div>
+    </div>
+    <hr>
+    <p>&copy; Nailistas Việt Nam</p>
+  </footer>
+
+
+  <script src="../Login/auth.js"></script>
+<script>
+  
+  const Auth = window.AuthUtils;
+  try { Auth.initToggleEye && Auth.initToggleEye(); } catch {}
+  
+
+  // Nút "Đã có tài khoản"
+  $("#to-login").addEventListener("click", () => {
+    window.location.href = "../Login/login.html";
+  });
+
+  // ===== Submit Đăng ký =====
+  $("#form-signup").addEventListener("submit", (e) => {
+    e.preventDefault();
+    ["su-name-err","su-email-err","su-password-err","su-confirm-err","signup-general","signup-ok"]
+      .forEach(id => (document.getElementById(id).textContent = ""));
+
+    const name  = document.getElementById("su-name").value.trim();
+    const email = document.getElementById("su-email").value.trim().toLowerCase();
+    const pw    = document.getElementById("su-password").value;
+    const cf    = document.getElementById("su-confirm").value;
+
+    let ok = true;
+    if (name.length < 2){ document.getElementById("su-name-err").textContent = "Vui lòng nhập họ tên đầy đủ (tối thiểu 2 ký tự)"; ok = false; }
+    if (!Auth.emailRe.test(email)){ document.getElementById("su-email-err").textContent = "Vui lòng nhập địa chỉ email hợp lệ"; ok = false; }
+    if (pw.length < 8){ document.getElementById("su-password-err").textContent = "Mật khẩu phải có ít nhất 8 ký tự"; ok = false; }
+    if (pw !== cf){ document.getElementById("su-confirm-err").textContent = "Mật khẩu xác nhận không khớp"; ok = false; }
+    if (!ok) return;
+
+    const users = Auth.loadUsers();
+    if (users.some(u => u.email === email)){
+      document.getElementById("signup-general").textContent = "Email này đã được đăng ký. Vui lòng đăng nhập hoặc dùng email khác.";
+      return;
+    }
+
+    const digest = Auth.hashPassword(pw);
+    users.push({ name, email, pw: digest, createdAt: Date.now() });
+
+    Auth.saveUsers(users);      // lưu bền
+    Auth.saveUsersTemp(users);  // lưu tạm (nếu bạn muốn)
+    sessionStorage.setItem("sv_pending_email", email);
+
+    const okBox = document.getElementById("signup-ok");
+    if (okBox) okBox.textContent = "🎉 Tạo tài khoản thành công. Đang chuyển đến trang đăng nhập...";
+    setTimeout(() => { window.location.href = "../Login/login.html"; }, 1200);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const dlgTerms = document.getElementById('dlg-terms');
+  const dlgPrivacy = document.getElementById('dlg-privacy');
+
+  // Open dialog handlers
+  document.getElementById('open-terms').addEventListener('click', (e) => {
+    e.preventDefault();
+    dlgTerms.showModal();
+  });
+
+  document.getElementById('open-privacy').addEventListener('click', (e) => {
+    e.preventDefault();
+    dlgPrivacy.showModal();
+  });
+
+  // Close buttons
+  document.querySelectorAll('.modal-close, .modal .btn[value="cancel"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dialog = btn.closest('dialog');
+      if (dialog) dialog.close();
+    });
+  });
+
+  // Click outside to close
+  document.querySelectorAll('.modal').forEach(dialog => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
+  });
+});
+
+</script>
+<script>
+  (function seedAdmin(){
+    const Auth = window.AuthUtils;
+    if(!Auth) return;
+    const users = Auth.loadUsers();
+    const email = 'admin@gmail.com';
+    const pass  = 'Admin@123';
+    if (!users.some(u => u.email === email)) {
+      users.push({
+        name: "Admin Nailistas",
+        email,
+        pw: Auth.hashPassword(pass),   // ✅ băm
+        role: "admin",
+        createdAt: Date.now()
+      });
+      Auth.saveUsers(users);
+    }
+  })();
+</script>
+  
+</body>
+</html>

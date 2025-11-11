@@ -1,0 +1,256 @@
+{
+  "sonmong1": {
+    "name": "Sơn móng tay cao cấp",
+    "price": 120000,
+    "img": "../images/nailpolish1.jpg",
+    "desc": "- Sơn móng tay cao cấp từ Nailistas mang lại lớp sơn bóng mịn, bền màu...",
+    "type": "polish"
+  },
+  "sonmong2": {
+    "name": "Gel móng tay siêu bền",
+    "price": 180000,
+    "img": "../images/gelpolish.jpg",
+    "desc": "- Gel móng tay siêu bền giúp lớp sơn giữ lâu, không bong tróc, dễ dàng tẩy rửa...",
+    "type": "polish"
+  },
+  "sonmong3": {
+    "name": "Sơn phủ bóng",
+    "price": 150000,
+    "img": "../images/topcoat.jpg",
+    "desc": "- Sơn phủ bóng giúp bảo vệ lớp sơn, tăng độ bền và độ sáng bóng cho móng.",
+    "type": "polish"
+  },
+  "sonmong4": {
+    "name": "Sơn móng tay lì mịn",
+    "price": 130000,
+    "img": "../images/nailpolish4.jpg",
+    "desc": "- Sơn lì mịn, khô nhanh, giúp móng trông tự nhiên và sang trọng.",
+    "type": "polish"
+  },
+  "sonmong5": {
+    "name": "Sơn móng ánh kim",
+    "price": 140000,
+    "img": "../images/nailpolish5.jpg",
+    "desc": "- Tạo hiệu ứng ánh kim lấp lánh, phù hợp cho buổi tiệc tối.",
+    "type": "polish"
+  },
+  "sonmong6": {
+    "name": "Sơn móng pastel",
+    "price": 120000,
+    "img": "../images/nailpolish6.jpg",
+    "desc": "- Tông màu pastel nhẹ nhàng, mang đến vẻ đẹp tinh tế và nữ tính.",
+    "type": "polish"
+  },
+  "sonmong7": {
+    "name": "Sơn móng khô nhanh",
+    "price": 125000,
+    "img": "../images/nailpolish7.jpg",
+    "desc": "- Khô chỉ trong 60 giây, tiện lợi cho người bận rộn.",
+    "type": "polish"
+  },
+  "sonmong8": {
+    "name": "Sơn móng chống tróc",
+    "price": 150000,
+    "img": "../images/nailpolish8.jpg",
+    "desc": "- Giúp lớp sơn bền màu, chống bong tróc trong nhiều ngày.",
+    "type": "polish"
+  },
+  "sonmong9": {
+    "name": "Sơn móng ánh ngọc trai",
+    "price": 160000,
+    "img": "../images/nailpolish9.jpg",
+    "desc": "- Tạo độ óng ánh như ngọc trai, thích hợp phong cách nhẹ nhàng.",
+    "type": "polish"
+  },
+  "sonmong10": {
+    "name": "Sơn móng dưỡng móng",
+    "price": 135000,
+    "img": "../images/nailpolish10.jpg",
+    "desc": "- Chứa dưỡng chất giúp bảo vệ và phục hồi móng yếu, giòn.",
+    "type": "polish"
+  },
+  "sonmong11": {
+    "name": "Sơn móng hologram",
+    "price": 170000,
+    "img": "../images/nailpolish11.jpg",
+    "desc": "- Hiệu ứng hologram độc đáo, phản chiếu ánh sáng rực rỡ.",
+    "type": "polish"
+  },
+  "sonmong12": {
+    "name": "Sơn móng nude cổ điển",
+    "price": 110000,
+    "img": "../images/nailpolish12.jpg",
+    "desc": "- Gam màu nude nhẹ nhàng, dễ phối với mọi phong cách.",
+    "type": "polish"
+  },
+
+  "dungcu1": {
+    "name": "Bộ dụng cụ làm móng",
+    "price": 350000,
+    "img": "../images/nailkit.jpg",
+    "desc": "- Bộ dụng cụ đầy đủ gồm kéo, dũa, nhíp và nhiều phụ kiện tiện dụng cho thợ nail.",
+    "type": "tool"
+  },
+  "dungcu2": {
+    "name": "Dũa móng tay chuyên dụng",
+    "price": 45000,
+    "img": "../images/nailfile.jpg",
+    "desc": "- Dũa móng tay mịn giúp định hình và làm mượt bề mặt móng dễ dàng.",
+    "type": "tool"
+  },
+  "dungcu3": {
+    "name": "Cọ vẽ móng nghệ thuật",
+    "price": 90000,
+    "img": "../images/brush.jpg",
+    "desc": "- Cọ vẽ móng chất lượng cao giúp tạo họa tiết tinh tế và chuyên nghiệp.",
+    "type": "tool"
+  },
+  "dungcu4": {
+    "name": "Máy mài móng mini",
+    "price": 320000,
+    "img": "../images/naildrill.jpg",
+    "desc": "- Máy mài móng gọn nhẹ, nhiều tốc độ, giúp làm sạch móng nhanh chóng.",
+    "type": "tool"
+  },
+  "dungcu5": {
+    "name": "Kềm cắt da cao cấp",
+    "price": 80000,
+    "img": "../images/cuticlecutter.jpg",
+    "desc": "- Lưỡi sắc bén, cắt chính xác và an toàn cho da tay.",
+    "type": "tool"
+  },
+  "dungcu6": {
+    "name": "Bộ dũa buffer 3 mặt",
+    "price": 50000,
+    "img": "../images/buffer.jpg",
+    "desc": "- Dũa đa năng giúp tạo bề mặt móng mịn, sáng bóng tự nhiên.",
+    "type": "tool"
+  },
+  "dungcu7": {
+    "name": "Bộ đèn LED sấy gel",
+    "price": 480000,
+    "img": "../images/ledlamp.jpg",
+    "desc": "- Đèn LED 48W giúp gel khô nhanh, tiết kiệm thời gian làm móng.",
+    "type": "tool"
+  },
+  "dungcu8": {
+    "name": "Chổi phủ bụi móng",
+    "price": 60000,
+    "img": "../images/dustbrush.jpg",
+    "desc": "- Giúp loại bỏ vụn bụi sau khi dũa, giữ móng sạch và sáng.",
+    "type": "tool"
+  },
+  "dungcu9": {
+    "name": "Khay sơn móng tay",
+    "price": 95000,
+    "img": "../images/palette.jpg",
+    "desc": "- Dụng cụ pha màu sơn tiện lợi, dễ vệ sinh, giúp vẽ chính xác hơn.",
+    "type": "tool"
+  },
+  "dungcu10": {
+    "name": "Kéo cắt móng tay thép không gỉ",
+    "price": 70000,
+    "img": "../images/nailscissor.jpg",
+    "desc": "- Chất liệu thép không gỉ, bền bỉ và sắc bén.",
+    "type": "tool"
+  },
+  "dungcu11": {
+    "name": "Bộ cọ chi tiết mini",
+    "price": 100000,
+    "img": "../images/detailbrush.jpg",
+    "desc": "- Gồm nhiều kích thước giúp vẽ họa tiết tinh tế và chính xác.",
+    "type": "tool"
+  },
+  "dungcu12": {
+    "name": "Bộ hộp đựng cọ và dụng cụ",
+    "price": 150000,
+    "img": "../images/toolbox.jpg",
+    "desc": "- Giúp bảo quản dụng cụ gọn gàng, chuyên nghiệp khi mang đi làm.",
+    "type": "tool"
+  },
+
+  "nailgia1": {
+    "name": "Bộ nailbox sang trọng",
+    "price": 200000,
+    "img": "../images/fakenail1.jpg",
+    "desc": "- Bộ nailbox thiết kế sang trọng, phù hợp cho tiệc và sự kiện.",
+    "type": "fake_nail"
+  },
+  "nailgia2": {
+    "name": "Nailbox đính đá",
+    "price": 250000,
+    "img": "../images/fakenail2.jpg",
+    "desc": "- Nailbox đính đá lấp lánh, tạo điểm nhấn nổi bật và cuốn hút.",
+    "type": "fake_nail"
+  },
+  "nailgia3": {
+    "name": "Nailbox phong cách Hàn",
+    "price": 230000,
+    "img": "../images/fakenail3.jpg",
+    "desc": "- Thiết kế tinh tế mang phong cách Hàn Quốc, giúp bạn tự tin tỏa sáng.",
+    "type": "fake_nail"
+  },
+  "nailgia4": {
+    "name": "Nailbox pastel nhẹ nhàng",
+    "price": 210000,
+    "img": "../images/fakenail14.jpg",
+    "desc": "- Tông pastel thanh lịch, phù hợp phong cách nữ tính, nhẹ nhàng.",
+    "type": "fake_nail"
+  },
+  "nailgia5": {
+    "name": "Nailbox ombre hiện đại",
+    "price": 240000,
+    "img": "../images/fakenail5.jpg",
+    "desc": "- Hiệu ứng chuyển màu tinh tế, bắt trend và trẻ trung.",
+    "type": "fake_nail"
+  },
+  "nailgia6": {
+    "name": "Nailbox họa tiết hoa",
+    "price": 260000,
+    "img": "../images/fakenail6.jpg",
+    "desc": "- Thiết kế họa tiết hoa nhẹ nhàng, mang vẻ đẹp dịu dàng và tinh tế.",
+    "type": "fake_nail"
+  },
+  "nailgia7": {
+    "name": "Nailbox ánh kim tiệc đêm",
+    "price": 270000,
+    "img": "../images/fakenail7.jpg",
+    "desc": "- Ánh kim lấp lánh, tỏa sáng trong mọi buổi tiệc.",
+    "type": "fake_nail"
+  },
+  "nailgia8": {
+    "name": "Nailbox trong suốt tự nhiên",
+    "price": 220000,
+    "img": "../images/fakenail8.jpg",
+    "desc": "- Tạo cảm giác tự nhiên như móng thật, phù hợp đi làm và dự tiệc.",
+    "type": "fake_nail"
+  },
+  "nailgia9": {
+    "name": "Nailbox đỏ rượu vang",
+    "price": 250000,
+    "img": "../images/fakenail9.jpg",
+    "desc": "- Màu đỏ rượu vang sang trọng, thể hiện sự quyến rũ và tự tin.",
+    "type": "fake_nail"
+  },
+  "nailgia10": {
+    "name": "Nailbox họa tiết marble",
+    "price": 260000,
+    "img": "../images/fakenail10.jpg",
+    "desc": "- Họa tiết đá marble độc đáo, mang nét nghệ thuật và cao cấp.",
+    "type": "fake_nail"
+  },
+  "nailgia11": {
+    "name": "Nailbox ánh hologram",
+    "price": 280000,
+    "img": "../images/fakenail11.jpg",
+    "desc": "- Ánh hologram phản chiếu nhiều màu sắc, nổi bật và khác biệt.",
+    "type": "fake_nail"
+  },
+  "nailgia12": {
+    "name": "Nailbox phối màu thời trang",
+    "price": 230000,
+    "img": "../images/fakenail12.jpg",
+    "desc": "- Phối nhiều tông màu cá tính, bắt trend thời trang hiện đại.",
+    "type": "fake_nail"
+  }
+}

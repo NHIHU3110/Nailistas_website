@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giỏ hàng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cart.css" />
+  <script src="../js/cart.js" defer></script>
+</head>
+<body>
+  <div id="overlay" onclick="toggleCartPopup()"></div>
+
+  <button class="add-to-cart-btn" onclick="toggleCartPopup()">
+    Giỏ hàng
+    <span class="cart-count" id="cart-count">2</span>
+  </button>
+
+  <div id="cart-popup">
+    <button class="close-btn" onclick="toggleCartPopup()">×</button>
+    <h3>Giỏ hàng (<span id="cart-count-title">2</span>)</h3>
+
+    <div class="cart-content">
+      <div class="cart-item">
+        <img src="../images/background.png" alt="Sản phẩm 1">
+        <div class="cart-item-info">
+          <h4>Sản phẩm 1</h4>
+          <div class="bottom-row">
+            <div class="quantity-box">
+              <button class="qty-btn" onclick="updateQuantity('decrement', 1)">−</button>
+              <input type="number" value="1" class="qty-input" readonly/>
+              <button class="qty-btn" onclick="updateQuantity('increment', 1)">+</button>
+            </div>
+            <p>100.000₫</p>
+          </div>
+        </div>
+        <button class="remove-btn" onclick="removeItem(1)">×</button>
+      </div>
+
+      <div class="cart-item">
+        <img src="../images/nailbox1.jpg" alt="Sản phẩm 2">
+        <div class="cart-item-info">
+          <h4>Sản phẩm 2</h4>
+          <div class="bottom-row">
+            <div class="quantity-box">
+              <button class="qty-btn" onclick="updateQuantity('decrement', 2)">−</button>
+              <input type="number" value="1" class="qty-input" readonly/>
+              <button class="qty-btn" onclick="updateQuantity('increment', 2)">+</button>
+            </div>
+            <p>200.000₫</p>
+          </div>
+        </div>
+        <button class="remove-btn" onclick="removeItem(2)">×</button>
+      </div>
+    </div>
+
+    <div class="checkout-container">
+      <div class="checkout-text">
+        Tạm tính:
+        <span id="cart-total-amount">300.000₫</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Thanh toán</button>
+    </div>
+  </div>
+
+  <script src="../js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt Lịch Nail</title>
+
+  <!-- Liên kết CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="booking_style.css">
+</head>
+<body>
+
+  <button id="btnBack" onclick="location.href='../Homepage/ck.html'">
+    <img src="2203523_arrow_back_botton_left_icon.png" alt="Back"> Quay Lại
+  </button>
+
+  <div class="booking-container" id="formContainer">
+    <h1>Đặt Lịch Nail</h1>
+    <form id="formDatLich">
+      <div class="form-group">
+        <label for="hoTen">Họ và Tên:</label>
+        <input type="text" id="hoTen" name="hoTen" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="soDienThoai">Số Điện Thoại:</label>
+        <input type="tel" id="soDienThoai" name="soDienThoai" required>
+      </div>
+      <div class="form-group">
+        <label for="dichVu">Chọn Dịch Vụ:</label>
+        <select id="dichVu" name="dichVu" required>
+          <option value="">-- Chọn dịch vụ --</option>
+          <option value="manicure">Manicure</option>
+          <option value="pedicure">Pedicure</option>
+          <option value="gel-nails">Gel Nails</option>
+          <option value="acrylic-nails">Acrylic Nails</option>
+          <option value="nail-art">Nail Art</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ngay">Ngày Mong Muốn:</label>
+        <input type="date" id="ngay" name="ngay" required>
+      </div>
+      <div class="form-group">
+        <label for="gio">Giờ Mong Muốn:</label>
+        <input type="time" id="gio" name="gio" required>
+      </div>
+      <div class="form-group">
+        <label for="ghiChu">Ghi Chú Thêm:</label>
+        <textarea id="ghiChu" name="ghiChu"></textarea>
+      </div>
+      <button type="submit">Đặt Lịch</button>
+    </form>
+  </div>
+
+  <!-- Popup Lỗi -->
+  <div class="overlay" id="overlayError">
+    <div class="popup">
+      <p id="errorMessage">Cưng ơi, xem lại giúp chị thông tin nhé. Chị thấy em hơi ẩu!
+        <br> Thời gian tụi chị làm việc từ 8h-17h30 nhíe !!!!
+      </p>
+      <button onclick="closeError()">Đóng</button>
+    </div>
+  </div>
+
+  <!-- Popup Thành Công -->
+  <div class="overlay" id="overlaySuccess">
+    <div class="popup">
+      <p>Cảm ơn cưng đã ủng hộ chị, nhớ theo dõi mail để xác nhận lịch hẹn nè. Nếu có thắc mắc, nhớ nói chị liền qua liên hệ trong trang. Hẹn gặp cưng tại cửa hàng!</p>
+  <img src="../Product/images/approved.png" alt="Approved">
+      <button onclick="closeSuccess()">Đóng</button>
+    </div>
+  </div>
+
+  
+  <!-- 🔵 Nút Facebook cố định -->
+  <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+
+  <!-- Liên kết JavaScript -->
+  <script src="booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tài khoản — Trang cá nhân</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="personal.css" />
+  <script src="../Login/auth.js"></script>
+
+</head>
+<body>
+  <div id="transition-overlay"><img src="../images/nail logo-01.png" alt="Logo chuyển trang"></div>
+
+    <header style="background-color: #1935E1;">
+      <div class="nav-left">
+        <a href="../Blog/Blog.html" data-transition>Blog</a>
+        <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+        <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+        <a href="../Service/service.html" data-transition>Dịch vụ</a>
+      </div>
+    
+      <div class="logo-center">
+        <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+      </div>
+    
+      <div class="nav-right">
+        <a href="../contact/contact.html" data-transition>Liên hệ</a>
+        <a href="../Login/login.html" data-transition>Đăng nhập</a>
+        <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+        <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+        <a href="../Personal/personal.html" data-transition class="account-link">
+          <div class="account-avatar" style="display:none;"></div>
+        </a>
+        
+      </div>
+        
+      </div>
+    </header>
+
+  <main class="container">
+    <div class="page-title">Tài khoản</div>
+    
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist">
+      <button class="tab-btn" data-tab="info" aria-selected="true" role="tab">Thông tin tài khoản</button>
+      <button class="tab-btn" data-tab="addr" role="tab">Danh sách địa chỉ</button>
+      <button class="tab-btn" data-tab="orders" role="tab">Lịch sử mua hàng</button>
+    </div>
+
+    <!-- Panel: Info -->
+    <div class="row" style="margin-top:12px">
+      <div>
+        <label>Avatar</label>
+        <div class="avatar-preview" id="avatarPreview" style="width:60px;height:60px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+          <span>+</span>
+        </div>
+        <input type="file" id="avatarInput" accept="image/*" style="display:none;">
+      </div>
+    </div>
+    
+    <section class="card" data-panel="info" role="tabpanel">
+      <h3>Thông tin tài khoản</h3>
+      <p class="hint">Email dùng để đăng nhập. Bạn có thể cập nhật thông tin cá nhân bên dưới.</p>
+      <div class="row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email">
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button class="btn ghost" id="changePwd">Đổi mật khẩu</button>
+        </div>
+      </div>
+
+      <h3 style="margin-top:16px">Thông tin cá nhân</h3>
+      <div class="row-3">
+        <div>
+          <label for="fullName">Họ và tên</label>
+          <input id="fullName" type="text" placeholder="Nguyễn Văn A">
+        </div>
+        <div>
+          <label for="dob">Ngày sinh</label>
+          <input id="dob" type="date">
+        </div>
+        <div>
+          <label for="gender">Giới tính</label>
+          <select id="gender">
+            <option value="">— Chọn giới tính —</option>
+            <option value="female">Nữ</option>
+            <option value="male">Nam</option>
+            <option value="other">Khác</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <div>
+          <label for="phone">Số điện thoại</label>
+          <input id="phone" type="tel" placeholder="0909 888 777">
+        </div>
+        <div>
+          <label for="bio">Giới thiệu</label>
+          <input id="bio" type="text" placeholder="Sở thích, lưu ý dịch vụ...">
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn brand" id="saveInfo">Lưu thay đổi</button>
+      </div>
+    </section>
+
+    <!-- Panel: Address -->
+    <section class="card-add" data-panel="addr" role="tabpanel" hidden>
+      <h3>Địa chỉ nhận hàng</h3>
+      <div id="addrBox" class="addr-list"></div>
+      <div class="actions"><button class="btn brand" id="addAddr">Thêm địa chỉ</button></div>
+    </section>
+
+    <!-- Panel: Orders -->
+    <section class="card-order" data-panel="orders" role="tabpanel" hidden>
+      <h3>Lịch sử mua hàng</h3>
+      <div style="overflow:auto">
+        <table>
+          <thead>
+            <tr><th>Mã đơn</th><th>Ngày</th><th>Mặt hàng</th><th>Tổng</th><th>Trạng thái</th></tr>
+          </thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section"><h3>Hệ thống chi nhánh</h3><p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p><p>📍 25 Lý Thường Kiệt, Hà Nội</p><p>📍 08 Bạch Đằng, Đà Nẵng</p></div>
+      <div class="footer-section"><h3>Liên hệ</h3><p>📞 Hotline: <strong>0909 888 777</strong></p><p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p></div>
+      <div class="footer-section"><h3>Chính sách</h3><p><a href="#">Chính sách bảo mật</a></p><p><a href="#">Điều khoản dịch vụ</a></p></div>
+    </div>
+    <hr>
+    <p>&copy; Nailistas Việt Nam</p>
+  </footer>
+    <!-- 🔵 Nút Facebook cố định -->
+    <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+        target="_blank" 
+        class="facebook-fixed">
+      <img src="../images/fb.png" alt="Facebook Logo">
+    </a>
+   <!-- 🔵 Nút gọi điện thoại cố định -->
+   <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+  <script src="../Homepage/ck.js"></script>
+  <script src="personal.js"></script>
+ <!-- Overlay + Cart Drawer (template chung) -->
+ <div id="overlay-cart"></div>
+
+ <div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+   <button class="close-btn" aria-label="Đóng">×</button>
+   <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+ 
+   <div class="cart-content" id="cart-content" aria-live="polite"></div>
+ 
+   <div class="checkout-container">
+     <div class="checkout-text">
+       Tạm tính:
+       <span id="cart-total-amount">0 VND</span>
+     </div>
+     <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+   </div>
+ </div>
+</body>
+</html>

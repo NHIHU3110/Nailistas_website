@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng nhập – Nailistas Việt Nam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Login/style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;" onclick="logout(); return false;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+  </header>
+  
+  <main>
+  <div class="login-container">
+    <div class="login-image">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas">
+      <h1>Chào mừng trở lại</h1>
+      <p>Trải nghiệm dịch vụ làm đẹp chuyên nghiệp và sản phẩm chăm sóc móng cao cấp.</p>
+    </div>
+
+    <div class="login-form">
+      <h2>Đăng nhập</h2>
+      <form id="form-login" novalidate>
+        <label>
+          Email
+          <input type="email" id="login-email" placeholder="you@example.com" required>
+          <div class="error" id="login-email-err"></div>
+        </label>
+
+        <label class="field-suffix">
+          Mật khẩu
+          <input type="password" id="login-password" placeholder="Nhập mật khẩu của bạn" required>
+          <button class="toggle-eye" type="button" data-for="login-password" aria-label="Hiển/ẩn mật khẩu"></button>
+          <div class="error" id="login-password-err"></div>
+        </label>
+
+        <div class="actions">
+          <label class="remember">
+            <input type="checkbox" id="remember-me"> Ghi nhớ đăng nhập
+          </label>
+          <a href="#" class="forgot">Quên mật khẩu?</a>
+        </div>
+
+        <button class="btn" type="submit">Đăng nhập</button>
+        <div class="error" id="login-general"></div>
+        <p class="footer-form">
+          Chưa có tài khoản? <a href="../Login/signup.html">Đăng ký ngay</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+
+
+  <!-- Transition overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Logo chuyển trang">
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section"><h3>Hệ thống chi nhánh</h3><p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p><p>📍 25 Lý Thương Kiệt, Hà Nội</p><p>📍 08 Bạch Đằng, Đà Nẵng</p></div>
+      <div class="footer-section"><h3>Liên hệ</h3><p>📞 Hotline: <strong>0909 888 777</strong></p><p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p></div>
+      <div class="footer-section"><h3>Chính sách</h3><p><a href="#">Chính sách bảo mật</a></p><p><a href="#">Điều khoản dịch vụ</a></p></div>
+    </div>
+    <hr>
+    <p>&copy; Nailistas Việt Nam</p>
+  </footer>
+
+  <div id="confetti-container"></div>
+
+<!-- Gọi auth.js trước để đảm bảo AuthUtils sẵn sàng -->
+<script src="auth.js"></script>
+
+<script>
+
+    const Auth = window.AuthUtils;
+    try { Auth.initToggleEye && Auth.initToggleEye(); } catch {}
+    
+    window.addEventListener("DOMContentLoaded", () => {
+      const pending = sessionStorage.getItem("sv_pending_email");
+      const saved = localStorage.getItem("sv_last_email");
+      if (pending) {
+        document.getElementById("login-email").value = pending;
+        document.getElementById("remember-me").checked = true;
+        sessionStorage.removeItem("sv_pending_email");
+      } else if (saved) {
+        document.getElementById("login-email").value = saved;
+        document.getElementById("remember-me").checked = true;
+      }
+    })
+
+    document.getElementById("form-login").addEventListener("submit", (e) => {
+      e.preventDefault();
+      ["login-email-err","login-password-err","login-general"].forEach(id => { 
+        const el=document.getElementById(id); 
+        if(el) el.textContent=""; 
+      });
+
+      const email = document.getElementById("login-email").value.trim().toLowerCase();
+      const pw = document.getElementById("login-password").value;
+
+      if(!Auth.emailRe.test(email)){
+        document.getElementById("login-email-err").textContent = "Vui lòng nhập địa chỉ email hợp lệ";
+        return;
+      }
+      if(!pw){
+        document.getElementById("login-password-err").textContent = "Vui lòng nhập mật khẩu";
+        return;
+      }
+
+      const users = Auth.loadUsers();
+      const digest = Auth.hashPassword(pw);
+      const user = users.find(u => u.email === email && u.pw === digest);
+
+      if(!user){
+        document.getElementById("login-general").textContent = "Email hoặc mật khẩu không chính xác. Vui lòng thử lại.";
+        return;
+      }
+
+      if(document.getElementById("remember-me").checked){
+        localStorage.setItem("sv_last_email", email);
+      } else {
+        localStorage.removeItem("sv_last_email");
+      }
+
+      Auth.setCurrentUser(user);
+
+// Trong hàm login thành công:
+// Trong hàm login thành công
+Auth.setCurrentUser(user);
+
+// Hoa hồng rơi
+launchRosePetals(80);
+
+// Xử lý điều hướng
+if (user.role === 'admin') {
+  const goAdmin = confirm("Bạn đăng nhập bằng tài khoản Admin.\nOK = vào Admin Dashboard. Cancel = vào Trang chủ.");
+  if (goAdmin) {
+    setTimeout(() => {
+      window.location.href = "../Admin/admin.html";
+    }, 1200);
+  } else {
+    setTimeout(goHome, 1200);
+  }
+} else {
+  setTimeout(goHome, 1200);
+}
+
+
+
+    });
+  </script>
+
+  <script>
+    (async function importUsersFromJsonOnce(){
+      const FLAG = 'sv_users_imported';
+      if(localStorage.getItem(FLAG)) return;
+      try{
+        const res = await fetch('../Login/users.json');
+        if(!res.ok) return;
+        const raw = await res.json();
+        const Auth = window.AuthUtils;
+        const existing = Auth.loadUsers();
+        const map = new Map(existing.map(u => [u.email, u]));
+        raw.forEach(u => {
+          if(!u?.email) return;
+          const hashed = (u.pw && u.pw.length < 20) ? Auth.hashPassword(u.pw) : u.pw;
+          map.set(u.email.toLowerCase(), {
+            name: u.name || '',
+            email: u.email.toLowerCase(),
+            pw: hashed,
+            role: u.role || 'user',
+            createdAt: u.createdAt || Date.now()
+          });
+        });
+        const merged = Array.from(map.values());
+        Auth.saveUsers(merged);
+        localStorage.setItem(FLAG, '1');
+        console.log('Imported users.json');
+      }catch(e){ console.warn('Import users.json failed', e); }
+    })();
+  </script>
+
+  <script>
+    (function seedAdminFix(){
+      const Auth = window.AuthUtils;
+      if(!Auth) return;
+      const users = Auth.loadUsers();
+      const email = 'admin@gmail.com';
+      const pass  = 'Admin@123';
+      if (!users.some(u => u.email === email)) {
+        users.push({
+          name: "Admin Nailistas",
+          email,
+          pw: Auth.hashPassword(pass),
+          role: "admin",
+          createdAt: Date.now()
+        });
+        Auth.saveUsers(users);
+        console.log('Đã tạo tài khoản admin');
+      } else {
+        console.log('⚙️ Admin đã tồn tại');
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <title>Thanh toán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/payment.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="../../Login/auth.js" defer></script>
+  </head>
+  <body>
+    <!-- Transition Overlay -->
+    <div id="transition-overlay">
+      <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+    </div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+    <div class="nav-left"> 
+      <a href="../../Blog/Blog.html">Blog</a>
+      <a href="../../Booking/Booking.html">Đặt lịch</a>
+      <a href="../../Product/html/Product.html">Sản phẩm</a>
+      <a href="../../Service/service.html">Dịch vụ</a>
+    </div>
+    <div class="logo-center">
+        <img src="../../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+    <div class="nav-right">
+      <a href="../../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+  </header>
+
+    <!-- Two Column Layout -->
+    <div class="checkout-layout">
+      <!-- Left Column -->
+      <div class="checkout-left">
+        <div class="checkout-container">
+          <h2>Thông tin liên hệ của bạn</h2>
+          <input type="email" placeholder="Nhập địa chỉ email">
+          <div class="checkbox-line">
+            <input type="checkbox" id="promo">
+            <label for="promo" style="font-style: italic;">Đăng ký nhận các thông tin khuyến mãi đầu tiên</label>
+          </div>
+
+          <div class="form-grid">
+            <div><input type="text" placeholder="Họ và tên"></div>
+            <div><input type="text" placeholder="Nhập số điện thoại"></div>
+
+            <select id="province">
+              <option value="">Chọn tỉnh thành</option>
+            </select>
+            <select id="district">
+              <option value="">Chọn quận/huyện</option>
+            </select>
+            <select id="ward">
+              <option value="">Chọn phường/xã</option>
+            </select>
+
+            <div><input type="text" placeholder="Số nhà, đường, khu vực"></div>
+          </div>
+
+          <div id="map" style="height: 400px; width: 100%; margin-top: 10px;"></div>
+          <input type="text" id="fullAddress" placeholder="Địa chỉ đầy đủ" readonly />
+
+          <div class="checkbox-line">
+            <input type="checkbox" id="save-info">
+            <label for="save-info">Lưu thông tin cho lần thanh toán tiếp theo</label>
+          </div>
+
+          <!-- PHƯƠNG THỨC VẬN CHUYỂN -->
+          <div class="section-divider"></div>
+          <h2>Phương thức vận chuyển</h2>
+          <label class="radio-line">
+            <input type="radio" name="shipping" value="standard" checked>
+            Giao hàng tiêu chuẩn (2-3 ngày) - 15.000₫
+          </label>
+          <label class="radio-line">
+            <input type="radio" name="shipping" value="express">
+            Giao hàng hoả tốc (4 giờ) - 30.000₫
+          </label>
+
+          <!-- PHƯƠNG THỨC THANH TOÁN -->
+          <div class="section-divider"></div>
+          <h2>Phương thức thanh toán</h2>
+          <label class="radio-line">
+            <input type="radio" name="payment">
+            Thanh toán khi giao hàng (COD)
+          </label>
+          <label class="radio-line">
+            <input type="radio" name="payment">
+            Thanh toán bằng Ví MoMo
+          </label>
+          <label class="radio-line">
+            <input type="radio" name="payment">
+            Thanh toán bằng thẻ ATM/VISA/MASTER
+          </label>
+
+          <!-- TẶNG QUÀ -->
+          <div class="section-divider"></div>
+          <h2>Tặng quà</h2>
+          <label class="checkbox-line">
+            <input type="checkbox" id="gift" checked>
+            <label for="gift">Viết lời nhắn</label>
+          </label>
+
+          <div class="gift-message">
+            <div class="gift-inputs">
+              <input type="text" placeholder="Tên người gửi">
+              <input type="text" placeholder="Tên người nhận">
+            </div>
+            <textarea placeholder="Thông điệp. Giới hạn 100 chữ."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="checkout-right">
+        <div class="product-column">
+          <h2>Tổng quan đơn hàng</h2>
+          <!-- Quan trọng: phải có id này -->
+          <div class="cart-summary" id="payment-cart-summary"></div>
+
+          <!-- Voucher -->
+          <div class="voucher-section">
+            <h3>Voucher bạn có</h3>
+            <div class="voucher-input-group">
+              <input type="text" placeholder="Mã giảm giá" class="voucher-input">
+              <button class="voucher-apply-btn">Áp dụng</button>
+            </div>
+          </div>
+
+          <!-- Cost Breakdown -->
+          <div class="cost-breakdown">
+            <div class="cost-row">
+              <span>Tổng phụ</span>
+              <span id="subtotal-display">0₫</span>
+            </div>
+            <div class="cost-row">
+              <span>Vận chuyển</span>
+              <span id="shipping-display">0₫</span>
+            </div>
+            <div class="cost-row">
+              <span>Giảm giá thành viên</span>
+              <span class="member-discount">0₫</span>
+            </div>
+            <div class="cost-row total-row">
+              <span>Tổng</span>
+              <span id="total-display">0₫</span>
+            </div>
+          </div>
+
+          <!-- Checkout -->
+          <div class="checkout-button-section">
+            <button class="checkout-btn">ĐẶT HÀNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 align="center">
+      <a href="#" id="back-to-cart" class="back-link">← Quay lại giỏ hàng</a>
+    </h2>
+
+    <!-- Popups -->
+    <div class="popup-overlay" id="invoicePopup">
+      <div class="popup-box">
+        <h3>🧾 Hóa đơn của bạn</h3>
+        <p id="invoiceDetails"></p>
+        <button id="closeInvoice">Đóng</button>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="qrPopup">
+      <div class="popup-box">
+        <h3>Quét QR để thanh toán</h3>
+        <div id="qrCodeContainer" style="text-align:center; margin:10px 0;">
+          <img id="qrCodeImage" src="../image/facebook_qrcode.png" alt="QR Code" style="width:200px;height:200px;">
+        </div>
+        <p>Thời gian còn lại: <span id="countdown">05:00</span></p>
+        <button id="closeQR">Hủy</button>
+      </div>
+    </div>
+
+    <div class="popup-overlay" id="paymentStatusPopup">
+      <div class="popup-box">
+        <h3 id="paymentStatusTitle">Thanh toán</h3>
+        <p id="paymentStatusMessage"></p>
+        <button id="closePaymentStatus">Đóng</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Hệ thống chi nhánh</h3>
+          <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+          <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+          <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+        </div>
+        <div class="footer-section">
+          <h3>Liên hệ</h3>
+          <p>📞 Hotline: <strong>0909 888 777</strong></p>
+          <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Chính sách</h3>
+          <p><a href="#">Chính sách bảo mật</a></p>
+          <p><a href="#">Điều khoản dịch vụ</a></p>
+        </div>
+      </div>
+      <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+    </footer>
+
+    <!-- Nút Facebook -->
+    <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" target="_blank" class="facebook-fixed">
+      <img src="../image/fb.png" alt="Facebook Logo">
+    </a>
+    <!-- Nút phone -->
+    <a href="tel:+84366549188" class="phone-fixed">
+      <img src="../image/phone.webp" alt="Phone Icon">
+    </a>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="../js/payment.js"></script>
+    <script src="../../Homepage/ck.js"></script>
+  </body>
+</html>

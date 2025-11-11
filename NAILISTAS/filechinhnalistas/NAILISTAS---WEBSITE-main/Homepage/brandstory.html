@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câu chuyện thương hiệu - Nailistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="homemoremain.css" />
+  <script src="../Login/auth.js" defer></script>
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+  <!-- Story Content -->
+  <section class="story-container">
+    <div class="story-images">
+      <img src="../images/nailstore1.jpeg" alt="Không gian tiệm Nailistas">
+    </div>
+    <div class="story-text">
+      <h1>Câu chuyện thương hiệu</h1>
+      <p>
+        Nailistas được ra đời từ niềm đam mê cháy bỏng với nghệ thuật làm đẹp và khát vọng tôn vinh phong cách riêng của mỗi người phụ nữ. 
+        Ngay từ những ngày đầu, chúng tôi luôn tin rằng mỗi bộ móng không chỉ là một tác phẩm nghệ thuật nhỏ bé – 
+        mà còn là cách bạn thể hiện bản thân, cảm xúc và tâm trạng của chính mình.
+      </p>
+      <p>
+        Tại Nailistas, mọi chi tiết đều được chăm chút kỹ lưỡng: từ mùi hương tinh tế lan tỏa trong không gian, 
+        ánh sáng dịu nhẹ, cho đến từng lớp sơn được lựa chọn kỹ càng. 
+        Chúng tôi mong muốn khách hàng không chỉ đến để làm đẹp, mà còn để tận hưởng những phút giây thư giãn, 
+        yêu thương bản thân và tái tạo năng lượng tích cực.
+      </p>
+      <p>
+        Đội ngũ nghệ nhân của chúng tôi luôn cập nhật xu hướng mới nhất, kết hợp cùng sự sáng tạo cá nhân 
+        để mang đến cho bạn những thiết kế độc đáo – nơi phong cách và cảm xúc hòa quyện thành một.
+      </p>
+      <p>
+        Với Nailistas, hành trình làm đẹp không chỉ là bên ngoài, mà còn là sự tự tin và niềm vui tỏa ra từ bên trong.  
+        Đó là câu chuyện mà chúng tôi muốn cùng bạn viết tiếp – mỗi ngày, bằng một màu sơn mới.
+      </p>
+      <button class="back-btn" onclick="goBack()">QUAY LẠI</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+  <!-- 🔵 Nút Facebook cố định -->
+  <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+
+  <script src="homemoremain.js"></script>
+  <!-- Overlay + Cart Drawer (template chung) -->
+<div id="overlay"></div>
+
+<div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <button class="close-btn" aria-label="Đóng">×</button>
+  <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+
+  <div class="cart-content" id="cart-content" aria-live="polite"></div>
+
+  <div class="checkout-container">
+    <div class="checkout-text">
+      Tạm tính:
+      <span id="cart-total-amount">0 VND</span>
+    </div>
+    <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+</body>
+</html>

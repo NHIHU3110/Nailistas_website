@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câu chuyện thương hiệu - Nailistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="articalmain.css" />
+  <script src="../Login/auth.js" defer></script>
+
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+
+  <!-- Story Content -->
+  <section class="story-container">
+    <div class="story-images">
+      <img src="../images/theomua.png" alt="Nail Theo Mùa">
+    </div>
+    <div class="story-text">
+      <h1>Mẫu Nail Hợp Xu Hướng Theo Mùa: Luôn Nổi Bật & Thời Thượng</h1>
+      <p>
+        Nailistas luôn cập nhật các xu hướng nail mới nhất, giúp khách hàng bắt kịp phong cách của từng mùa trong năm. Từ màu sắc, họa tiết đến kiểu dáng, chúng tôi thiết kế những bộ móng vừa thời thượng vừa phù hợp với từng thời điểm.
+      </p>
+      <p>
+        Mùa xuân thường gợi ý các gam pastel, hoa lá nhẹ nhàng; mùa hè nổi bật với những màu rực rỡ, sặc sỡ; mùa thu mang tông trầm ấm và mùa đông là lúc thử nghiệm các gam màu đậm, sang trọng. Bên cạnh đó, các họa tiết theo mùa như lá vàng, bông tuyết hay các pattern nổi bật được Nailistas thiết kế tinh tế, tạo sự khác biệt cho mỗi bộ móng.
+      </p>
+      <p>
+        Chúng tôi không chỉ làm đẹp cho móng mà còn kết hợp với phong cách thời trang, giúp bộ móng hài hòa với trang phục và sự kiện mà khách hàng tham dự. Từng chi tiết nhỏ đều được chăm chút để tạo nên sự hoàn hảo từ tổng thể.
+      </p>
+      <p>
+        Nailistas cung cấp dịch vụ tư vấn chọn màu và mẫu nail theo mùa, phù hợp với cá tính, sở thích và phong cách sống của từng khách hàng. Các sản phẩm sử dụng đều bền màu, chất lượng cao, đảm bảo giữ được độ sáng bóng và bền đẹp suốt nhiều ngày.
+      </p>
+      <p>
+        Với chúng tôi, mỗi bộ móng theo mùa không chỉ là xu hướng mà còn là cách thể hiện cá tính, phong cách sống và sự tự tin. Hãy để Nailistas giúp bạn luôn nổi bật với bộ móng hợp thời trang và đầy ấn tượng.
+      </p>
+      <button class="back-btn" onclick="goBack()">QUAY LẠI</button>
+    </div>
+  </section>
+  
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+  <!-- 🔵 Nút Facebook cố định -->
+  <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+  <script src="articalmain.js"></script>
+  <!-- Overlay + Cart Drawer (template chung) -->
+  <div id="overlay"></div>
+
+  <div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <button class="close-btn" aria-label="Đóng">×</button>
+    <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+  
+    <div class="cart-content" id="cart-content" aria-live="polite"></div>
+  
+    <div class="checkout-container">
+      <div class="checkout-text">
+        Tạm tính:
+        <span id="cart-total-amount">0 VND</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+    </div>
+  </div>
+</body>
+</html>

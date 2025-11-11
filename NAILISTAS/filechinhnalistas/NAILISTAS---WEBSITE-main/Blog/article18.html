@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câu chuyện thương hiệu - Nailistas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="articalmain.css" />
+  <script src="../Login/auth.js" defer></script>
+
+</head>
+<body>
+
+  <!-- Transition Overlay -->
+  <div id="transition-overlay">
+    <img src="../images/nail logo-01.png" alt="Nailistas Logo">
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="../Blog/Blog.html" data-transition>Blog</a>
+      <a href="../Booking/Booking.html" data-transition>Đặt lịch</a>
+      <a href="../Product/html/Product.html" data-transition>Sản phẩm</a>
+      <a href="../Service/service.html" data-transition>Dịch vụ</a>
+    </div>
+  
+    <div class="logo-center">
+      <img src="../images/nail logo-01.png" alt="Logo Nailistas" onclick="goHome()">
+    </div>
+  
+    <div class="nav-right">
+      <a href="../contact/contact.html" data-transition>Liên hệ</a>
+      <a href="../Login/login.html" data-transition>Đăng nhập</a>
+      <a href="#" id="cart-link">Giỏ hàng <span id="cart-count" class="badge">0</span></a>
+      <a href="#" data-auth="logout" style="display: none;">Đăng xuất</a>
+      <a href="../Personal/personal.html" data-transition class="account-link">
+        <div class="account-avatar" style="display:none;"></div>
+      </a>
+      
+    </div>
+      
+    </div>
+  </header>
+
+  </header>
+
+  <!-- Story Content -->
+  <section class="story-container">
+    <div class="story-images">
+      <img src="../images/festival.jpeg" alt="Nail Festival Halloween">
+    </div>
+    <div class="story-text">
+      <h1>Nail Festival: Đón Halloween Với Phong Cách Rực Rỡ</h1>
+      <p>
+        Mùa Halloween sắp tới là cơ hội tuyệt vời để thể hiện cá tính qua những bộ móng đầy màu sắc và sáng tạo. Nail Festival tại Nailistas mang đến các thiết kế nail ma mị, ấn tượng và cực kỳ hợp xu hướng, giúp bạn nổi bật trong mọi lễ hội.
+      </p>
+      <p>
+        Các bộ móng Halloween thường sử dụng tông màu chủ đạo như cam, đen, tím, kết hợp với họa tiết bí ngô, mạng nhện, dơi, ma quái hoặc kim tuyến lấp lánh, tạo hiệu ứng nổi bật và vui nhộn cho mùa lễ hội.
+      </p>
+      <p>
+        Nailistas chú trọng sự hài hòa giữa màu móng, họa tiết và phụ kiện để bạn vừa ấn tượng vừa thời trang. Các thiết kế được thực hiện tỉ mỉ, giữ màu lâu, đảm bảo bạn thoải mái tham gia lễ hội mà không lo trầy xước hay phai màu.
+      </p>
+      <p>
+        Dù là party Halloween, dạo phố hay tham gia sự kiện lễ hội, Nail Festival tại Nailistas giúp bạn tỏa sáng với bộ móng độc đáo, cá tính và đầy ma thuật. Hãy chuẩn bị cho mùa Halloween sắp tới bằng những bộ móng thật nổi bật!
+      </p>
+      <button class="back-btn" onclick="goBack()">QUAY LẠI</button>
+    </div>
+  </section>
+  
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Hệ thống chi nhánh</h3>
+        <p>📍 12 Nguyễn Huệ, Quận 1, TP.HCM</p>
+        <p>📍 25 Lý Thường Kiệt, Hà Nội</p>
+        <p>📍 08 Bạch Đằng, Đà Nẵng</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liên hệ</h3>
+        <p>📞 Hotline: <strong>0909 888 777</strong></p>
+        <p>📧 Email: <a href="mailto:contact@nailistas.vn">contact@nailistas.vn</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Chính sách</h3>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản dịch vụ</a></p>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; Nailistas Việt Nam</p>
+  </footer>
+
+
+  <!-- 🔵 Nút Facebook cố định -->
+  <a href="https://www.facebook.com/share/1K7fcAhSu3/?mibextid=wwXIfr" 
+    target="_blank" 
+    class="facebook-fixed">
+    <img src="../images/fb.png" alt="Facebook Logo">
+  </a>
+  <!-- 🔵 Nút gọi điện thoại cố định -->
+  <a href="tel:+84366549188" class="phone-fixed">
+    <img src="../images/phone.webp" alt="Phone Icon">
+  </a>
+
+  <script src="articalmain.js"></script>
+  <!-- Overlay + Cart Drawer (template chung) -->
+  <div id="overlay"></div>
+
+  <div id="cart-popup" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <button class="close-btn" aria-label="Đóng">×</button>
+    <h3 id="cartTitle">Giỏ hàng (<span id="cart-count-title">0</span>)</h3>
+  
+    <div class="cart-content" id="cart-content" aria-live="polite"></div>
+  
+    <div class="checkout-container">
+      <div class="checkout-text">
+        Tạm tính:
+        <span id="cart-total-amount">0 VND</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
+    </div>
+  </div>
+</body>
+</html>

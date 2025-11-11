@@ -1,0 +1,956 @@
+* { box-sizing: border-box; scroll-behavior: smooth; margin: 0; padding: 0; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.fade-in { opacity: 1; }
+
+/*HEADER*/
+/* ---- Header ---- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(25, 53, 225, 0.9);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Bên trái */
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+/* Bên phải */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* Logo ở giữa */
+.logo-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-center img {
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+/* Hover chỉ scale, không di chuyển */
+.logo-center img:hover {
+  transform: scale(1.1);
+}
+
+/* Hiệu ứng hover cho link trong header */
+header a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Tạo gạch chân ẩn ban đầu */
+header a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff; /* Hồng nhạt cho đẹp */
+  transition: transform 0.3s ease;
+}
+
+/* Khi hover: đổi màu chữ và cho gạch chân trượt ra */
+header a:hover {
+  color: #ffffff;
+}
+
+header a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+/*HEADER*/
+
+
+/* ---- Story Section ---- */
+.story-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 10%;
+  gap: 40px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff8f0;
+  margin-top: 0;
+}
+.story-text { flex: 1 1 50%; color: #333; }
+.story-text h1 { font-size: 2rem; margin-bottom: 10px; }
+.story-text h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; }
+.story-text .story-desc { font-size: 1rem; line-height: 1.5; margin-bottom: 25px; }
+.read-more-btn {
+  background-color: transparent;
+  border: 2px solid #5d3f98;
+  color: #5d3f98;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.read-more-btn:hover { background-color: #5d3f98; color: #fff; }
+
+.story-images { flex: 1 1 50%; display: flex; justify-content: flex-start; align-items: center; }
+.image-hills { width: 110%; position: relative; }
+.image-hills img { width: 100%; display: block; border-radius: 20px; }
+
+/* ---- Articles Header ---- */
+.articles-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 10%;
+}
+.articles-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1935E1;
+  letter-spacing: 3px;
+}
+.see-more-btn {
+  background-color: #5d3f98;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.see-more-btn:hover { background-color: #7a57d1; color: #fff; }
+
+/* ---- Additional Articles Section ---- */
+.additional-articles {
+  margin: 0 10% 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.article-card {
+  background-color: #fff8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.article-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.article-card a { display: flex; flex-direction: column; text-decoration: none; color: inherit; height: 100%; }
+.article-img img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.3s ease;
+}
+.article-card:hover .article-img img { transform: scale(1.05); }
+.article-text { padding: 12px 15px; display: flex; flex-direction: column; gap: 6px; height: 100%; }
+.article-date { font-size: 0.8rem; color: #999; }
+.article-text h2 { font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+.article-text p { font-size: 0.95rem; line-height: 1.5; color: #555; height: 60px; overflow: hidden; }
+
+/* ---- Footer ---- */
+footer {
+  background-color: #1935E1;
+  color: #fff8f0;
+  padding: 40px 10%;
+  text-align: center;
+  animation: fadeInFooter 1s ease 0.5s both;
+  margin-top: auto;
+}
+ /* ---- Fashion Section ---- */
+/* ---- Fashion Section ---- */
+.fashion-section {
+  width: 80%; /* Thay đổi chiều rộng phần fashion-section */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa phần */
+  background-image: url("../images/wrap-01.png"); /* Thay 'images/fashion.jpg' bằng đường dẫn ảnh của bạn */
+  background-size: cover;  /* Ảnh sẽ phủ toàn bộ khu vực */
+  background-position: center; /* Đặt ảnh ở giữa */
+  padding: 80px 10%; /* Tăng padding trên và dưới để tăng chiều cao */
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  position: relative; /* Cần có position relative để lớp phủ có thể được thêm vào đúng vị trí */
+
+  /* Căn giữa văn bản và hình ảnh cả theo chiều ngang và dọc */
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  text-align: center; /* Căn giữa nội dung trong phần */
+  flex-direction: column; /* Đặt văn bản và ảnh theo chiều dọc */
+}
+
+.fashion-section::after {
+  content: ''; /* Nội dung trống để tạo lớp phủ */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Màu đen với độ mờ 70% */
+  border-radius: 20px;
+  z-index: 1; /* Đảm bảo lớp phủ nằm trên ảnh */
+}
+
+.fashion-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  z-index: 2; /* Đảm bảo chữ nằm trên lớp phủ */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Thêm hiệu ứng phát sáng cho chữ */
+}
+
+.fashion-section p {
+  z-index: 2; /* Đảm bảo chữ nằm trên lớp phủ */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Thêm hiệu ứng phát sáng cho chữ */
+}
+
+
+@keyframes fadeInFooter { from {opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+.footer-container { display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; text-align:center; margin-bottom:30px; }
+.footer-section { flex:1 1 250px; }
+.footer-section h3 { color:#ffb6c1; margin-bottom:10px; }
+.footer-section a { color:#fff8f0; text-decoration:none; }
+.footer-section a:hover { opacity:0.8; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.3); padding-top:15px; font-size:0.9rem; }
+
+/* ---- Transition Overlay ---- */
+#transition-overlay {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background-color:#1935E1;
+  display:flex; align-items:center; justify-content:center;
+  z-index:9999; opacity:1; transition:opacity 0.8s ease;
+}
+#transition-overlay img { width:400px; animation:pulse 1.2s infinite alternate; }
+@keyframes pulse { from {transform:scale(1); opacity:1;} to {transform:scale(1.15); opacity:0.8;} }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .story-container { flex-direction: column; padding:50px 5%; }
+  .story-images, .story-text { flex:1 1 100%; }
+  .logo-right img { height:40px; }
+  .nav-left { gap:15px; }
+  .additional-articles { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) { .additional-articles { grid-template-columns: 1fr; } }
+
+
+    /* --- Nút Facebook cố định --- */
+    .facebook-fixed {
+      position: fixed;
+      bottom: 120px;
+      right: 25px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .facebook-fixed img {
+      width: 50px;
+      height: 50px;
+      filter: brightness(0.7);
+      transition: all 0.3s ease;
+    }
+
+    .facebook-fixed:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0, 51, 255, 0.5);
+    }
+
+    .facebook-fixed:hover img {
+      filter: brightness(1.2);
+    }
+
+   /* --- Nút phone cố định --- */
+.phone-fixed {
+  position: fixed;
+  bottom: 200px;
+  right: 25px;
+  z-index: 1000;  /* Nút Facebook */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  overflow: hidden; 
+}
+
+.phone-fixed img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0.7);
+  transition: all 0.3s ease;
+}
+
+.phone-fixed:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 51, 255, 0.5);
+}
+
+.phone-fixed:hover img {
+  filter: brightness(1.2);
+}
+
+/*CART*/
+:root{
+  --brand:#1935e1; --danger:#ff4d6d; --header-h:80px;
+}
+
+/* --- Badge nhỏ trên header --- */
+.badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:22px; height:22px; padding:0 6px; background:#fff; color:var(--brand);
+  border-radius:999px; font-size:12px; font-weight:700;
+}
+
+/* --- Overlay chung cho cart --- */
+#overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.4);
+  opacity:0; visibility:hidden; transition:opacity .25s ease; z-index:1900;
+}
+#overlay.show{ opacity:1; visibility:visible; }
+
+/* --- Drawer cart bám mép phải, top = header 80px --- */
+#cart-popup{
+  position:fixed; top:var(--header-h); right:0; bottom:0;
+  width:min(680px, calc(100% - 24px));
+  background:#fff; border-radius:20px 0 0 20px; border-left:1px solid #eee;
+  box-shadow:-12px 0 30px rgba(0,0,0,.18);
+  overflow:hidden; z-index:2001;
+  transform:translateX(100%); opacity:0;
+  transition:transform .28s ease, opacity .28s ease;
+}
+#cart-popup.open{ transform:translateX(0); opacity:1; }
+
+#cart-popup h3{
+  margin:0; padding:16px 24px; text-align:center; color:var(--brand);
+  font-size:22px; font-weight:700; background:#fff; border-bottom:1px solid #f0f0f0;
+}
+#cart-popup .close-btn{
+  position:absolute; left:16px; top:14px; background:transparent; border:none;
+  color:var(--brand); font-size:22px; cursor:pointer; line-height:1;
+}
+
+/* list cao, footer dính đáy */
+.cart-content{
+  height:calc(100% - 160px); overflow:auto; padding:8px 24px 12px;
+}
+.cart-item{
+  display:grid; grid-template-columns:64px 1fr auto; gap:12px; align-items:center;
+  padding:12px 0; border-bottom:1px solid #eee;
+}
+.cart-item:last-child{ border-bottom:none; }
+.cart-item img{
+  width:64px; height:64px; border-radius:10px; object-fit:cover; border:1px solid #eee;
+}
+.cart-item-info h4{ margin:0; font-size:15px; color:#222; }
+.bottom-row{ margin-top:6px; display:flex; align-items:center; gap:12px; }
+.bottom-row p{ margin-left:auto; color:#222; font-weight:600; }
+
+.quantity-box{
+  display:inline-flex; align-items:center; gap:8px; background:#e9eeff;
+  padding:6px 8px; border-radius:8px;
+}
+.qty-btn{
+  width:28px; height:28px; border-radius:6px; border:none; cursor:pointer;
+  background:var(--brand); color:#fff; font-weight:700;
+}
+.qty-input{
+  width:40px; height:28px; text-align:center; border:none; background:#fff; border-radius:6px; font-weight:700;
+}
+.remove-btn{
+  background:none; border:none; color:var(--brand); cursor:pointer; font-size:18px; line-height:1;
+}
+
+/* footer dính đáy */
+.checkout-container{
+  position:sticky; bottom:0; background:var(--brand); color:#fff;
+  padding:18px 24px; display:flex; align-items:center; justify-content:space-between; gap:14px;
+  border-top-left-radius:18px;
+}
+.checkout-text{ font-weight:700; }
+.checkout-text span{ display:block; margin-top:8px; font-size:26px; letter-spacing:.3px; }
+.checkout-btn {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ff4d6d, #ff7a95);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(255,77,109,0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0; /* không căn giữa nữa */
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #ff7a95, #ff4d6d);
+  box-shadow: 0 6px 20px rgba(255,77,109,0.7);
+  transform: translateY(-2px);
+}
+
+.checkout-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(255,77,109,0.5);
+}
+
+.checkout-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: all 0.7s ease;
+}
+
+.checkout-btn:hover::after {
+  left: 125%;
+}
+.checkout-btn {
+  margin: 0 auto; /* căn giữa nút trong container */
+}
+
+@media (max-width:768px){
+  #cart-popup{ width:calc(100% - 8px); }
+}
+
+
+/*AVATAR*/
+
+/* Header right: tài khoản, giỏ hàng, etc. */
+.nav-right {
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+  gap: 15px;
+}
+
+/* ===== HEADER & AUTH STYLES ===== */
+
+/* Header chính */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(25, 53, 225, 0.9);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* Bên trái và bên phải */
+.nav-left, .nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Logo ở giữa */
+.logo-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-center img {
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.logo-center img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== HEADER LINKS ===== */
+header a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+header a:hover {
+  color: #ffffff;
+}
+
+header a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ===== AVATAR & ACCOUNT ===== */
+
+/* Link bao ngoài avatar và text */
+.account-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none !important;
+}
+
+/* ===== AVATAR & ACCOUNT ===== */
+
+/* Link bao ngoài avatar và text */
+.account-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none !important;
+}
+
+/* Không hiệu ứng gạch chân cho account-link */
+.account-link::after {
+  display: none !important;
+}
+
+/* Text "Tài khoản" - mặc định hiện */
+/* Text "Tài khoản" - mặc định hiện */
+.account-text {
+  display: inline;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+/* Avatar - mặc định ẩn */
+.account-avatar {
+  display: none; /* Ẩn cho đến khi đăng nhập */
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #1935E1;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.account-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Nút đăng xuất - mặc định ẩn */
+a[data-auth="logout"] {
+  display: none;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  pointer-events: auto !important; /* Đảm bảo có thể click */
+  z-index: 100; /* Đảm bảo ở trên cùng */
+  position: relative;
+}
+
+a[data-auth="logout"]:hover {
+  opacity: 0.8;
+}
+
+/* Khi đã đăng nhập, nút đăng xuất hiển thị inline-block */
+a[data-auth="logout"][style*="display: inline-block"],
+a[data-auth="logout"][style*="display: block"] {
+  display: inline-block !important;
+}
+
+/* ===== CART BADGE ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  background: #fff;
+  color: #1935E1;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 12px;
+  }
+
+  header a {
+    font-size: 0.9rem;
+  }
+
+  .account-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .logo-center img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-left,
+  .nav-right {
+    gap: 8px;
+  }
+
+  header a {
+    font-size: 0.85rem;
+  }
+
+  .account-text {
+    display: none; /* Ẩn text trên mobile, chỉ giữ avatar */
+  }
+}
+
+
+/*AVATAR đổi đc*/
+.account-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc; /* màu mặc định nếu chưa có ảnh */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* ký tự fallback */
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Header right: tài khoản, giỏ hàng, etc. */
+.nav-right {
+display: flex;
+align-items: center; /* căn giữa theo chiều dọc */
+gap: 15px;
+}
+
+.account-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+/* Cart popup */
+#cart-popup {
+  position: fixed;
+  top: var(--header-h);
+  right: 0;
+  bottom: 0;
+  width: min(680px, calc(100% - 24px));
+  background: #fff;
+  border-radius: 20px 0 0 20px;
+  border-left: 1px solid #eee;
+  box-shadow: -12px 0 30px rgba(0,0,0,.18);
+  overflow: hidden; /* để scroll chỉ bên trong cart-content */
+  z-index: 2001;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform .28s ease, opacity .28s ease;
+  display: flex;
+  flex-direction: column; /* quan trọng để footer luôn nằm dưới */
+}
+
+/* Cart content scroll */
+.cart-content {
+  flex: 1 1 auto; /* chiếm toàn bộ không gian còn lại */
+  overflow-y: auto;
+  padding: 8px 24px;
+}
+
+/* Footer luôn ở dưới */
+.checkout-container {
+  flex-shrink: 0; /* không bị thu nhỏ */
+  background: var(--brand);
+  color: #fff;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top-left-radius: 18px;
+  z-index: 10;
+}
+
+
+/*LẬT TARROT*/
+/* Tiêu đề */
+/* Tiêu đề */
+#tarotTitle {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.8),
+    0 0 18px rgba(255,255,255,0.25);
+  letter-spacing: 1px;
+
+  margin-top: 20px;    /* cách trên nhẹ */
+  margin-bottom: 60px; /* cách dưới rộng hơn để tách khỏi dàn lá bài */
+}
+
+
+
+#tarotContainer {
+  width: 100%;
+  background: url('Vast-Universe-Concept.gif') center center / cover no-repeat;
+  padding: 30px 0 50px 0; /* giảm padding ngang để full chiều rộng */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  overflow: hidden; /* tránh tràn nội dung */
+}
+/* Lớp đen mờ overlay */
+#tarotContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* đen mờ 50% */
+  z-index: 1; /* dưới nội dung */
+}
+
+/* Nội dung luôn nằm trên overlay */
+#tarotContainer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+  height: 260px;            /* đủ cao để lá giữa scale */
+  margin-bottom: 40px;      /* khoảng cách giữa card và shuffle */
+}
+
+/* Slot lá bài */
+.card-slot {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-inner.middle {
+  transform: scale(1.3);
+  z-index: 10;
+}
+
+.card-inner.flipped.middle {
+  transform: rotateY(180deg) scale(1.3);
+}
+.card-inner.flipped:not(.middle) {
+  transform: rotateY(180deg) scale(1);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.card-front {
+  background: url('card_back.png') center center / cover no-repeat;
+  font-size: 0;
+}
+
+.card-back {
+  background-color: #f8f4e3; /* nền giấy nhạt */
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(0,0,0,0.015),
+      rgba(0,0,0,0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  border-radius: 10px;
+  box-shadow: 
+    inset 0 0 8px rgba(0,0,0,0.05),
+    0 0 10px rgba(0,0,0,0.1);
+  border: 1px solid rgba(200, 180, 130, 0.5);
+  color: #3e2f10;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  text-shadow: none;
+  transition: all 0.5s ease;
+  transform: rotateY(180deg);
+}
+
+
+
+
+/* Nút xáo bài */
+.shuffle-container {
+  margin-bottom: 30px;      /* giãn cách dưới card */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#shuffleBtn {
+  padding: 14px 36px; /* hơi to hơn */
+  border-radius: 50px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 700; /* đậm hơn */
+  font-size: 1.4rem; /* chữ to hơn */
+  cursor: pointer;
+  transition: all 0.3s ease, text-shadow 0.3s ease;
+}
+#shuffleBtn:hover {
+  background-color: #ffffff;
+  color: #40013f;
+
+  /* Glow mạnh hơn khi hover */
+  text-shadow: 0 0 8px #ffffff, 0 0 16px #ffeb3b;
+  box-shadow: 
+    0 0 8px #ffffff, 
+    0 0 16px #ffeb3b, 
+    0 0 24px #ffd700;
+  transform: scale(1.05);
+}
+
+/* Message display */
+#cardMessageContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.message-display {
+  font-size: 1.2rem;
+  color: #ffeb3b;
+}
